@@ -24,13 +24,14 @@ wilkinsburg_taxes(income,property) = wilkinsburg_income_taxes(income) + wilkinsb
 
 pittsburgh_taxes(income,property) = pittsburgh_income_taxes(income) + pittsburgh_total_property_taxes(property)
 
-pct_change(income,property) = wilkinsburg_taxes(income,property) / pittsburgh_taxes(income,property)
+pct_change(income,property) = (wilkinsburg_taxes(income,property) / pittsburgh_taxes(income,property)) * 100
 
 set tic scale 0
 
-set palette rgbformula 33,13,10
-#set cbrange auto
-set cblabel "Percent Change"
+set palette rgbformula 30,31,32 #33,13,10
+set cblabel "Percent Change in Total Taxes from Wilkinsburg to Pittsburgh"
+set format cb "%.1f%%"
+set cbtics 10
 #unset cbtics
 
 set termoption enhanced
@@ -50,17 +51,14 @@ set xtics 5000 rotate by 45
 set yrange [ 0 : 750000 ]
 set ylabel "Property Taxes"
 set format y "$%'.0f"
-set ytics 25000
+set ytics 20000
 
 #set pm3d implicit at s
 set pm3d at b
 
-#set parametric
-#set urange [ 0 : 250000 ] noreverse nowriteback
-#set vrange [ 0 : 750000 ] noreverse nowriteback
 
 #set isosamples 50,30
-#set style fill solid 0.4 noborder
+set style fill solid 1 noborder
 
 set view map
 
