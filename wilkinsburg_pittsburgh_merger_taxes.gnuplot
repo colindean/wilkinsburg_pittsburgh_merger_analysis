@@ -22,14 +22,14 @@ wilkinsburg_taxes(income,property) = wilkinsburg_income_taxes(income) + wilkinsb
 
 pittsburgh_taxes(income,property) = pittsburgh_income_taxes(income) + pittsburgh_total_property_taxes(property)
 
-pct_change(income,property) = wilkinsburg_taxes(income,property)/pittsburgh_taxes(income,property)
+pct_change(income,property) = wilkinsburg_taxes(income,property) / pittsburgh_taxes(income,property)
 
 set tic scale 0
 
-set palette rgbformula -7,2,-7
+set palette rgbformula 33,13,10
 #set cbrange [0:5]
 set cblabel "Percent Change"
-unset cbtics
+#unset cbtics
 
 set termoption enhanced
 save_encoding = GPVAL_ENCODING
@@ -38,23 +38,29 @@ set encoding utf8
 set title "Proposed Wilkinsburg/Pittsburgh Merger Effect on Total Income and Property Tax for Wilkinsburg Residents"
 #set key Left center top reverse
 unset key
- 
+
+set decimal locale
 set xlabel "Earned Income Taxes"
 set xrange [ 0 : 250000 ]
-set format x "$%d"
-set xtics auto
+set format x "$%'.0f"
+set xtics 5000 rotate by 45
  
 set yrange [ 0 : 750000 ]
 set ylabel "Property Taxes"
-set format y "$%d"
-set ytics auto
+set format y "$%'.0f"
+set ytics 25000
 
-set samples 50,30
-set style fill solid 0.4 noborder
+set pm3d implicit at s
+
+set parametric
+set urange [ 0 : 250000 ] noreverse nowriteback
+set vrange [ 0 : 750000 ] noreverse nowriteback
+
+set isosamples 50,30
+#set style fill solid 0.4 noborder
 
 set view map
 
-splot '++' matrix using 1:2:(pct_change($1,$2)) with image
-#, \
-#'++' matrix using 1:2:(pct_change($1,$2)) with labels
+splot '++' matrix using 1:2:(pct_change($1,$2)) with image, \
+      '++' matrix using 1:2:(sprintf("%g", pct_change($1,$2))) with labels
 
