@@ -1,3 +1,5 @@
+# edit at https://thetimetube.herokuapp.com/gnuplotviewer/
+
 set terminal svg enhanced size 1920,1080
 
 # https://alleghenycountytreasurer.us/real-estate-tax/
@@ -27,7 +29,7 @@ pct_change(income,property) = wilkinsburg_taxes(income,property) / pittsburgh_ta
 set tic scale 0
 
 set palette rgbformula 33,13,10
-#set cbrange [0:5]
+#set cbrange auto
 set cblabel "Percent Change"
 #unset cbtics
 
@@ -50,17 +52,21 @@ set ylabel "Property Taxes"
 set format y "$%'.0f"
 set ytics 25000
 
-set pm3d implicit at s
+#set pm3d implicit at s
+set pm3d at b
 
-set parametric
-set urange [ 0 : 250000 ] noreverse nowriteback
-set vrange [ 0 : 750000 ] noreverse nowriteback
+#set parametric
+#set urange [ 0 : 250000 ] noreverse nowriteback
+#set vrange [ 0 : 750000 ] noreverse nowriteback
 
-set isosamples 50,30
+#set isosamples 50,30
 #set style fill solid 0.4 noborder
 
 set view map
 
-splot '++' matrix using 1:2:(pct_change($1,$2)) with image, \
-      '++' matrix using 1:2:(sprintf("%g", pct_change($1,$2))) with labels
+splot pct_change(x,y), \
+      '++' using (sprintf("%.2f", pct_change(x,y))) with labels
+
+#splot '++' matrix using 1:2:(pct_change($1,$2)) with image, \
+#      '++' matrix using 1:2:(sprintf("%g", pct_change($1,$2))) with labels
 
