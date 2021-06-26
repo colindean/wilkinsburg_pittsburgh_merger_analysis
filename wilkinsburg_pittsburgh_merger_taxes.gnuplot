@@ -58,7 +58,7 @@ set ytics 20000
 set pm3d at b
 
 
-#set isosamples 50,30
+set isosamples 47,38
 set style fill solid 1 noborder
 
 set view map
