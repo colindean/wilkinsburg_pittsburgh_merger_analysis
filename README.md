@@ -13,4 +13,13 @@ What I would love to do is somehow scale this or carve out areas on the graph th
 
 The biggest assumption of this graph is that somebody looking at it is paying property taxes opaquely. That is, they know precisely how much their property tax is or they are paying it as a part of their mortgage, not something rolled into their rent.
 
-I also want to make a version of this graph that _does not_ include a school district merger so folks can see that effect.
+I also want to make some more versions of this graph:
+
+1. One that _does not_ include a school district merger so folks can see that effect.
+2. One that shows dollar change instead of percentage change, because folks rarely actually remember how much they pay in taxes to be able to multiply it.
+
+### Help Wanted
+
+I could use a GNUplot expert to help me clean up the code and help make the color changes more stark.
+
+I could use someone interested in make a small static website for this. I'll probably get around to this eventually myself but it's low on the priority list until I have more insight to present.
