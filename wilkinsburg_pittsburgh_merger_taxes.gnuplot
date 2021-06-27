@@ -61,11 +61,11 @@ unset key
 
 set decimal locale
 set xlabel "Earned Income Taxes"
-set xrange [ 15000 : 250000 ]
+set xrange [ 15000 : 300000 ]
 set format x "$%'.0f"
 set xtics 5000 rotate by 45
- 
-set yrange [ 20000 : 750000 ]
+
+set yrange [ 20000 : 190000 ]
 set ylabel "County-Assessed Property Value"
 set format y "$%'.0f"
 set ytics 20000
