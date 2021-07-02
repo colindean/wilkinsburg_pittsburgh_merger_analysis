@@ -58,6 +58,7 @@ set palette defined(\
 set cblabel "Percent Change in Total Taxes"
 set format cb "%.1f%%"
 set cbtics 10
+set grid cbtics linewidth 3
 #set cbrange [:250]
 #unset cbtics
 
