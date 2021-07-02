@@ -28,9 +28,9 @@ wilkinsburg_taxes(income,property) = wilkinsburg_income_taxes(income) + wilkinsb
 
 pittsburgh_taxes(income,property) = pittsburgh_income_taxes(income) + pittsburgh_total_property_taxes(property)
 
-pct_change(income,property) = (pittsburgh_taxes(income,property) / wilkinsburg_taxes(income,property)) * 100
+full_pct_change(income,property) = (pittsburgh_taxes(income,property) / wilkinsburg_taxes(income,property)) * 100
 
-raw_change(income,property) = (pittsburgh_taxes(income,property) - wilkinsburg_taxes(income,property))
+full_raw_change(income,property) = (pittsburgh_taxes(income,property) - wilkinsburg_taxes(income,property))
 
 set tic scale 0
 
@@ -51,7 +51,7 @@ set palette defined(\
 100 '#ffffff',\
 250 '#b10027')
 
-set cblabel "Percent Change in Total Taxes from Wilkinsburg to Pittsburgh"
+set cblabel "Percent Change in Total Taxes"
 set format cb "%.1f%%"
 set cbtics 10
 #set cbrange [:250]
@@ -78,7 +78,7 @@ set ytics 20000
 #set pm3d implicit at s
 set pm3d at b
 
-set title "Percentage change"
+set title "Percentage Change of Total Taxes, Full Merger"
 
 set isosamples 47,38
 set style fill solid 1 noborder
@@ -101,12 +101,12 @@ set label "3Q $53.7k" at 0,53750
 set arrow from 15000,90101.39 to 300000,90101.39 nohead front
 set label "1σ $90.1k" at 0,90101.39
 
-splot pct_change(x,y), \
-      '++' using (sprintf("%.2f", pct_change(x,y))) with labels
+splot full_pct_change(x,y), \
+      '++' using (sprintf("%.2f", full_pct_change(x,y))) with labels
 
 ### Raw Dollar Change
 
-set title "Actual Dollar Change in Total Taxes"
+set title "Actual Dollar Change in Total Taxes, Full Merger"
 set cblabel "Dollar Change in Total Taxes"
 set format cb "$%'.0f"
 set cbtics 240
@@ -116,8 +116,8 @@ set palette defined(\
 0 '#ffffff',\
 5520 '#b10027')
 
-splot raw_change(x,y), \
-      '++' using (sprintf("%.2f", raw_change(x,y))) with labels
+splot full_raw_change(x,y), \
+      '++' using (sprintf("%.2f", full_raw_change(x,y))) with labels
 
 #splot '++' matrix using 1:2:(pct_change($1,$2)) with image, \
 #      '++' matrix using 1:2:(sprintf("%g", pct_change($1,$2))) with labels

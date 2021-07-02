@@ -16,7 +16,6 @@ The biggest assumption of this graph is that somebody looking at it is paying pr
 I also want to make some more versions of this graph:
 
 1. One that _does not_ include a school district merger so folks can see that effect.
-2. One that shows dollar change instead of percentage change, because folks rarely actually remember how much they pay in taxes to be able to multiply it.
 
 ### Help Wanted
 
