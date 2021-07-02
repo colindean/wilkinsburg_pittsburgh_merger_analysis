@@ -1,5 +1,5 @@
 # edit at https://thetimetube.herokuapp.com/gnuplotviewer/
-set terminal svg enhanced size 1920,2160
+set terminal svg enhanced size 3440,2160 font "Arial, 16" fontscale 1.1 background '#ffffff'
 
 set size 1,1
 set origin 0,0
@@ -94,16 +94,18 @@ set view map
 #set label "1Q" at 0,9300
 # median
 set arrow from 15000,26300 to 300000,26300 nohead front
-set label "Median $26.3k" at 0,26300
+set label "Median $26.3k" at -10000,26300
 # mean
 set arrow from 15000,41102.9 to 300000,41102.9 nohead front
-set label "Mean $41.1k" at 0,43000 # collides with ytic
+set label "Mean $41.1k" at -8000,43000 # collides with ytic
 # third quartile
 set arrow from 15000,53750 to 300000,53750 nohead front
-set label "3Q $53.7k" at 0,53750
+set label "3Q $53.7k" at -7000,53750
 # first stddev
 set arrow from 15000,90101.39 to 300000,90101.39 nohead front
-set label "1σ $90.1k" at 0,90101.39
+set label "1σ $90.1k" at -6000,90101.39
+set arrow from 15000,139101.1 to 300000,139101.1 nohead front
+set label "2σ $139k" at -8000,135101.1 # collides with ytic
 
 splot full_pct_change(x,y), \
       '++' using (sprintf("%.2f", full_pct_change(x,y))) with labels
