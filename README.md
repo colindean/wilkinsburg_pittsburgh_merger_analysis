@@ -5,7 +5,15 @@ Quick links:
 * [Tax Graph](wilkinsburg_pittsburgh_merger_taxes.svg)
 * [Tax Calculator](calculator.html)
 
-This is a heat map charting the percentage change difference when accounting for earned income tax and real estate and school tax going from Wilkinsburg to Pittsburgh under the proposed merger. Blue means taxes go down, red means taxes go up. The darker the color, the deeper the change. The white line that is approximately diagonal is The sweet spot of no change.
+This little site contains some documents, graphs, and programs to analyze the proposed Wilkinsburg/Pittsburgh Annexation/Merger.
+
+## Calculator
+
+The calculator shows what your income and property taxes would be in two scenarios: a full merger and a merger that does not include the school district.
+
+## Graphs
+
+The heat map charts the percentage change difference when accounting for earned income tax and real estate and school tax going from Wilkinsburg to Pittsburgh under the proposed merger. Blue means taxes go down, red means taxes go up. The darker the color, the deeper the change. The white line that is approximately diagonal is The sweet spot of no change.
 
 The graph itself is quite simple math but I've chosen the ranges based on some heuristics:
 
@@ -15,8 +23,6 @@ The graph itself is quite simple math but I've chosen the ranges based on some h
 ## Future Work
 
 What I would love to do is somehow scale this or carve out areas on the graph that include various percentages of the Wilkinsburg population.
-
-The biggest assumption of this graph is that somebody looking at it is paying property taxes opaquely. That is, they know precisely how much their property tax is or they are paying it as a part of their mortgage, not something rolled into their rent.
 
 ### Help Wanted
 
