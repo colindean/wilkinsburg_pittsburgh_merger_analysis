@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wilkinsburg/Pittsburgh Annexation/Merger Calculator</title>
+    <style>
+      table {
+        border: 1px solid black;
+      }
+      td {
+        border: 1px solid black;
+      }
+      thead {
+        font-weight: bold;
+      }
+      .decrease {
+        background: #cfc;
+      }
+      .decrease::after {
+        content: ' less';
+      }
+      .increase {
+        background: #fcc;
+      }
+      .increase::after {
+        content: ' more';
+      }
+      form {
+        margin: 2em;
+      }
+    </style>
+  </head>
+<body>
+<h1>Calculate your tax difference if Wilkinsburg is annexed by Pittsburgh</h1>
+
+<form id="form">
+  <div>
+    <label for="income">Your Household Income, no commas</label>
+    <input name="income" id="income" placeholder="35000"/>
+  </div>
+  <div>
+    <label for="property">Your House's Assessed Value</label>
+    <input name="property" id="property" placeholder="50000"/>
+    <p>
+      Don't know your assessed value?
+      Enter 0 if you rent.
+      <a href="http://www2.alleghenycounty.us/RealEstate/Default.aspx">Look it up</a>.
+      You'll want the "Total value" under "2020 County Assessed Value".
+    </p>
+  </div>
+  <button type="submit" name="calculate" id="calculate">Calculate</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <td>Thing</td>
+      <td>Wilkinsburg (present)</td>
+      <td>Pittsburgh (full merger)</td>
+      <td>Increase versus present</td>
+      <td>Pittsburgh (no school district merger)</td>
+      <td>Increase versus present</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Earned Income Tax</td>
+      <td id="w-eit"></td>
+      <td id="p-eit"></td>
+      <td id="p-eiti"></td>
+      <td id="psd-eit"></td>
+      <td id="psd-eiti"></td>
+    </tr>
+    <tr>
+      <td>Municipal Real Estate Property Tax</td>
+      <td id="w-ret"></td>
+      <td id="p-ret"></td>
+      <td id="p-reti"></td>
+      <td id="psd-ret"></td>
+      <td id="psd-reti"></td>
+    </tr>
+    <tr>
+      <td>School Property Tax</td>
+      <td id="w-sdt"></td>
+      <td id="p-sdt"></td>
+      <td id="p-sdti"></td>
+      <td id="psd-sdt"></td>
+      <td id="psd-sdti"></td>
+    </tr>
+    <tr>
+      <td>Total Tax</td>
+      <td id="w-tt"></td>
+      <td id="p-tt"></td>
+      <td id="p-tti"></td>
+      <td id="psd-tt"></td>
+      <td id="psd-tti"></td>
+    </tr>
+  </tbody>
+</table>
+<script>
+    function w_eit(income) { return income * 0.01; }
+    function p_eit(income) { return income * 0.03; }
+    function w_ret(property) { return property * (14.0/1000); }
+    function p_ret(property) { return property * (8.06/1000); }
+    function w_sdt(property) { return property * (29.5/1000); }
+    function p_sdt(property) { return property * (9.95/1000); }
+
+    function calculate(){
+        let income = document.getElementById('income').value;
+        let property = document.getElementById('property').value;
+
+        let results = new Map();
+
+        results.set('w-eit', w_eit(income));
+        results.set('p-eit', p_eit(income));
+        results.set('p-eiti', p_eit(income) - w_eit(income));
+        results.set('psd-eit', p_eit(income));
+        results.set('psd-eiti', p_eit(income) - w_eit(income));
+
+        results.set('w-ret', w_ret(property));
+        results.set('p-ret', p_ret(property));
+        results.set('p-reti', p_ret(property) - w_ret(property));
+        results.set('psd-ret', p_ret(property));
+        results.set('psd-reti', p_ret(property) - w_ret(property));
+
+        results.set('w-sdt', w_sdt(property));
+        results.set('p-sdt', p_sdt(property));
+        results.set('p-sdti', p_sdt(property) - w_sdt(property));
+        results.set('psd-sdt', w_sdt(property));
+        results.set('psd-sdti', 0.0);
+
+        let wilk = w_eit(income) + w_ret(property) + w_sdt(property);
+        let pgh = p_eit(income) + p_ret(property) + p_sdt(property);
+        let pgh_wilksd =  p_eit(income) + p_ret(property) + w_sdt(property);
+        results.set('w-tt', wilk);
+        results.set('p-tt', pgh);
+        results.set('p-tti', pgh - wilk);
+        results.set('psd-tt', pgh_wilksd);
+        results.set('psd-tti', pgh_wilksd - wilk);
+
+        return results;
+    }
+
+    function display(results) {
+        results.forEach(function(value, key) {
+          console.log(key + ' = ' + value);
+          let elem = document.getElementById(key);
+          elem.innerText = Math.abs(Math.round(value,2)).formatMoney();
+          if(key.endsWith('i')){
+              let c = value < 0 ? 'decrease' : 'increase'
+              elem.classList.add(c);
+          }
+        });
+    }
+
+    window.onload = function(){
+      let form = document.getElementById('form');
+      form.onsubmit = function(e) {
+        e.preventDefault();
+        display(calculate());
+      };
+    };
+
+    // https://stackoverflow.com/a/11270819/204052
+    Number.prototype.formatMoney = function(decPlaces, thouSeparator, decSeparator, currencySymbol) {
+        // check the args and supply defaults:
+        decPlaces = isNaN(decPlaces = Math.abs(decPlaces)) ? 2 : decPlaces;
+        decSeparator = decSeparator == undefined ? "." : decSeparator;
+        thouSeparator = thouSeparator == undefined ? "," : thouSeparator;
+        currencySymbol = currencySymbol == undefined ? "$" : currencySymbol;
+
+        var n = this,
+            sign = n < 0 ? "-" : "",
+            i = parseInt(n = Math.abs(+n || 0).toFixed(decPlaces)) + "",
+            j = (j = i.length) > 3 ? j % 3 : 0;
+
+        return sign + currencySymbol + (j ? i.substr(0, j) + thouSeparator : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thouSeparator) + (decPlaces ? decSeparator + Math.abs(n - i).toFixed(decPlaces).slice(2) : "");
+    };
+
+
+</script>
+
+</body>
+</html>
