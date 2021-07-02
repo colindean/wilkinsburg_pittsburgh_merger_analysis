@@ -69,7 +69,7 @@ set encoding utf8
 unset key
 
 set decimal locale
-set xlabel "Earned Income Taxes"
+set xlabel "Earned Income"
 set xrange [ 15000 : 300000 ]
 set format x "$%'.0f"
 set xtics 5000 rotate by 45
@@ -89,6 +89,14 @@ set style fill solid 1 noborder
 
 set view map
 
+## INCOME LINES
+# https://www.census.gov/quickfacts/fact/table/wilkinsburgboroughpennsylvania/PST045219
+# https://censusreporter.org/profiles/16000US4285188-wilkinsburg-pa/
+set arrow from 36743,20000 to 36743,190000 nohead front
+set label "Median Household Income (2019) $36.7k" at 36743,6000
+
+## PROPERTY TAX LINES
+
 # first quartile
 #set arrow from 0,9300 to 300000,9300 nohead front
 #set label "1Q" at 0,9300
@@ -106,6 +114,8 @@ set arrow from 15000,90101.39 to 300000,90101.39 nohead front
 set label "1σ $90.1k" at -6000,90101.39
 set arrow from 15000,139101.1 to 300000,139101.1 nohead front
 set label "2σ $139k" at -8000,135101.1 # collides with ytic
+
+set label "Data sources: U.S. Census Bureau QuickFacts, Allegheny County via Western PA Regional Data Center" at -15000,-15000
 
 splot full_pct_change(x,y), \
       '++' using (sprintf("%.2f", full_pct_change(x,y))) with labels

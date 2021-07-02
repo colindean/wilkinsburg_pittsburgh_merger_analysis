@@ -50,6 +50,9 @@
 	<g transform="translate(860.0,141.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
 		<text><tspan font-family="Arial" >Percentage Change of Total Taxes, Full Merger</tspan></text>
 	</g>
+	<g transform="translate(290.4,1012.6)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >Median Household Income (2019) $36.7k</tspan></text>
+	</g>
 	<g transform="translate(69.9,920.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median $26.3k</tspan></text>
 	</g>
@@ -64,6 +67,9 @@
 	</g>
 	<g transform="translate(79.3,426.6)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >2σ $139k</tspan></text>
+	</g>
+	<g transform="translate(46.3,1107.9)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >Data sources: U.S. Census Bureau QuickFacts, Allegheny County via Western PA Regional Data Center</tspan></text>
 	</g>
 </g>
 	<g id="gnuplot_plot_1a" ><title>gnuplot_plot_1a</title>
@@ -5329,7 +5335,7 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(860.0,1011.0)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Earned Income Taxes</tspan></text>
+		<text><tspan font-family="Arial" >Earned Income</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -5667,11 +5673,14 @@
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='black'  d='M187.8,915.2 L1532.2,915.2 M187.8,848.0 L1532.2,848.0 M187.8,790.6 L1532.2,790.6 M187.8,625.6 L1532.2,625.6
-		M187.8,403.2 L1532.2,403.2  '/></g>
+	<path stroke='black'  d='M290.4,943.8 L290.4,172.2 M187.8,915.2 L1532.2,915.2 M187.8,848.0 L1532.2,848.0 M187.8,790.6 L1532.2,790.6
+		M187.8,625.6 L1532.2,625.6 M187.8,403.2 L1532.2,403.2  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(860.0,1209.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
 		<text><tspan font-family="Arial" >Percent Change in Total Taxes, No School Merger</tspan></text>
+	</g>
+	<g transform="translate(290.4,2080.6)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >Median Household Income (2019) $36.7k</tspan></text>
 	</g>
 	<g transform="translate(69.9,1988.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median $26.3k</tspan></text>
@@ -10952,7 +10961,7 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(860.0,2079.0)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Earned Income Taxes</tspan></text>
+		<text><tspan font-family="Arial" >Earned Income</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -11270,11 +11279,14 @@
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='black'  d='M187.8,1983.2 L1532.2,1983.2 M187.8,1916.0 L1532.2,1916.0 M187.8,1858.6 L1532.2,1858.6 M187.8,1693.6 L1532.2,1693.6
-		M187.8,1471.2 L1532.2,1471.2  '/></g>
+	<path stroke='black'  d='M290.4,2011.8 L290.4,1240.2 M187.8,1983.2 L1532.2,1983.2 M187.8,1916.0 L1532.2,1916.0 M187.8,1858.6 L1532.2,1858.6
+		M187.8,1693.6 L1532.2,1693.6 M187.8,1471.2 L1532.2,1471.2  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(2580.0,141.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
 		<text><tspan font-family="Arial" >Actual Dollar Change in Total Taxes, Full Merger</tspan></text>
+	</g>
+	<g transform="translate(2010.4,1012.6)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >Median Household Income (2019) $36.7k</tspan></text>
 	</g>
 	<g transform="translate(1789.9,920.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median $26.3k</tspan></text>
@@ -11290,6 +11302,9 @@
 	</g>
 	<g transform="translate(1799.3,426.6)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >2σ $139k</tspan></text>
+	</g>
+	<g transform="translate(1766.3,1107.9)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >Data sources: U.S. Census Bureau QuickFacts, Allegheny County via Western PA Regional Data Center</tspan></text>
 	</g>
 </g>
 	<g id="gnuplot_plot_1c" ><title>gnuplot_plot_1c</title>
@@ -16555,7 +16570,7 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(2580.0,1011.0)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Earned Income Taxes</tspan></text>
+		<text><tspan font-family="Arial" >Earned Income</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -16995,11 +17010,14 @@
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<path stroke='black'  d='M3285.8,172.2  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='black'  d='M1907.8,915.2 L3252.2,915.2 M1907.8,848.0 L3252.2,848.0 M1907.8,790.6 L3252.2,790.6 M1907.8,625.6 L3252.2,625.6
-		M1907.8,403.2 L3252.2,403.2  '/></g>
+	<path stroke='black'  d='M2010.4,943.8 L2010.4,172.2 M1907.8,915.2 L3252.2,915.2 M1907.8,848.0 L3252.2,848.0 M1907.8,790.6 L3252.2,790.6
+		M1907.8,625.6 L3252.2,625.6 M1907.8,403.2 L3252.2,403.2  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(2580.0,1209.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
 		<text><tspan font-family="Arial" >Actual Dollar Change in Total Taxes, No School Merger</tspan></text>
+	</g>
+	<g transform="translate(2010.4,2080.6)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >Median Household Income (2019) $36.7k</tspan></text>
 	</g>
 	<g transform="translate(1789.9,1988.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median $26.3k</tspan></text>
@@ -22280,7 +22298,7 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(2580.0,2079.0)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Earned Income Taxes</tspan></text>
+		<text><tspan font-family="Arial" >Earned Income</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -22658,8 +22676,8 @@
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='black'  d='M1907.8,1983.2 L3252.2,1983.2 M1907.8,1916.0 L3252.2,1916.0 M1907.8,1858.6 L3252.2,1858.6 M1907.8,1693.6 L3252.2,1693.6
-		M1907.8,1471.2 L3252.2,1471.2  '/></g>
+	<path stroke='black'  d='M2010.4,2011.8 L2010.4,1240.2 M1907.8,1983.2 L3252.2,1983.2 M1907.8,1916.0 L3252.2,1916.0 M1907.8,1858.6 L3252.2,1858.6
+		M1907.8,1693.6 L3252.2,1693.6 M1907.8,1471.2 L3252.2,1471.2  '/></g>
 </g>
 </svg>
 
