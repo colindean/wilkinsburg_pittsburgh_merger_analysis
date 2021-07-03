@@ -1,4 +1,4 @@
-# Wilkinsburg and Pittsburgh merger analysis
+# Wilkinsburg and Pittsburgh Annexation/Merger Analysis
 
 Quick links:
 
