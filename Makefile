@@ -10,6 +10,7 @@ TARGETS = $(GNUPLOT_FILES:gnuplot=svg) $(GNUPLOT_FILES:gnuplot=png)
 ASSESSMENTS = assessments.csv
 ASSESSMENTS_WILKINSBURG = wilkinsburg.csv
 ASSESSMENTS_WILKINSBURG_RESIDENCES = wilkinsburg-residence.csv
+ASSESSMENTS_WILKINSBURG_RESIDENCES_TOTAL = wilkinsburg-residence-countytotal.csv
 
 XSV ?= xsv
 ST ?= st
@@ -36,7 +37,7 @@ debug: ## Print key variables
 	@echo "TARGETS: $(TARGETS)"
 
 .PHONY: get-assessment-data
-get-assessment-data: $(ASSESSMENTS) $(ASSESSMENTS_WILKINSBURG) $(ASSESSMENTS_WILKINSBURG_RESIDENCES) ## Retrieve and extract all assessment data
+get-assessment-data: $(ASSESSMENTS) $(ASSESSMENTS_WILKINSBURG) $(ASSESSMENTS_WILKINSBURG_RESIDENCES) $(ASSESSMENTS_WILKINSBURG_RESIDENCES_TOTAL) ## Retrieve and extract all assessment data
 
 $(ASSESSMENTS): ## Download Allegheny County assessment data from WPRDC
 	$(CURL) --output $@ "$(ASSESSMENTS_URL)"
@@ -49,6 +50,9 @@ $(ASSESSMENTS_WILKINSBURG): $(ASSESSMENTS) $(ASSESSMENTS).idx ## Extract Wilkins
 
 $(ASSESSMENTS_WILKINSBURG_RESIDENCES): $(ASSESSMENTS_WILKINSBURG) $(ASSESSMENTS_WILKINSBURG).idx ## Extract residences only from Wilkinsburg data
 	$(XSV) search --select $(shell xsv headers $(ASSESSMENTS) | grep CLASSDESC | cut -f 1 -d ' ') $(CLASS_RESIDENCE) $< > $@
+
+$(ASSESSMENTS_WILKINSBURG_RESIDENCES_TOTAL): $(ASSESSMENTS_WILKINSBURG_RESIDENCES) ## Extract only the COUNTYTOTAL field from Wilkinsburg residence data
+	$(XSV) sort --numeric --select COUNTYTOTAL $(ASSESSMENTS_WILKINSBURG_RESIDENCES) | xsv select COUNTYTOTAL | tail -n +2 > $@
 
 .PHONY: stats-mean-stddev
 stats-mean-stddev: $(ASSESSMENTS_WILKINSBURG_RESIDENCES) ## Use xsv to display stats
