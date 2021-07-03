@@ -23,9 +23,10 @@ The graph itself is quite simple math but I've chosen the ranges based on some h
 ## Future Work
 
 What I would love to do is somehow scale this or carve out areas on the graph that include various percentages of the Wilkinsburg population.
+The graphs do indicate the median household income with a vertical line but I don't have any other data about household incomes in order to find where on the map the majority of Wilkinsburg residents are. According to Census Bureau data, approximately 2/3 of Wilkinsburg households are under $50,000 per year. I don't know how best to represent that in the graph.
 
 ### Help Wanted
 
 I could use a GNUplot expert to help me clean up the code and help make the color changes more stark.
 
-I could use someone interested in make a small static website for this. I'll probably get around to this eventually myself but it's low on the priority list until I have more insight to present.
+I could use someone interested in make a better small static website for this. I'm using GitHub Pages for now and it's adequate but it could be snazzier.
