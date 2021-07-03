@@ -1,3 +1,4 @@
+# https://data.wprdc.org/dataset/property-assessments
 ASSESSEMENTS_URL=https://data.wprdc.org/dataset/2b3df818-601e-4f06-b150-643557229491/resource/f2b8d575-e256-4718-94ad-1e12239ddb92/download/assessments.csv
 
 MUNI_CODE ?= 866
