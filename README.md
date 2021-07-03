@@ -7,7 +7,9 @@ Quick links:
 
 This little site contains some documents, graphs, and programs to analyze the proposed Wilkinsburg/Pittsburgh Annexation/Merger.
 
-Share this site with a more speakable URL: [`j.mp/cd-wilk-pgh-merger`](https://bit.ly/cd-wilk-pgh-merger)
+Share this site with a more speakable URL: [`j.mp/cd-wilk-pgh-merger`](https://bit.ly/cd-wilk-pgh-merger) or scan this convenient QRcode with your smartphone's Camera app or QRCode reader app to geta link to this page.
+
+![QRcode to the link above](bitly-qrcode.png)
 
 ## Tax Calculator
 
