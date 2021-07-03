@@ -7,6 +7,8 @@ Quick links:
 
 This little site contains some documents, graphs, and programs to analyze the proposed Wilkinsburg/Pittsburgh Annexation/Merger.
 
+Share this site with a more speakable URL: [`j.mp/cd-wilk-pgh-merger`](https://bit.ly/cd-wilk-pgh-merger)
+
 ## Tax Calculator
 
 The tax calculator shows what your income and property taxes would be in two scenarios: a full merger and a merger that does not include the school district.
