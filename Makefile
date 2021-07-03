@@ -14,6 +14,7 @@ ST ?= st
 GNUPLOT ?= gnuplot
 CURL ?=
 INKSCAPE ?= flatpak run org.inkscape.Inkscape
+PNGCRUSH ?= pngcrush
 
 all: $(TARGETS) ## Create all artifacts
 
@@ -26,6 +27,7 @@ help:
 
 %.png: %.svg
 	$(INKSCAPE) --export-filename=$@ --export-overwrite --export-type=png $<
+	$(PNGCRUSH) -ow $@
 
 debug: ## Print key variables
 	@echo "FILES: $(FILES)"
