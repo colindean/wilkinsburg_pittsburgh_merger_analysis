@@ -36,17 +36,17 @@
 
 <form id="form">
   <div>
-    <label for="income">Your Household Income, no commas</label>
+    <label for="income">Your Yearly Household Income, no commas</label>
     <input name="income" id="income" placeholder="35000"/>
   </div>
   <div>
     <label for="property">Your House's Assessed Value</label>
     <input name="property" id="property" placeholder="50000"/>
     <p>
-      Don't know your assessed value?
-      Enter 0 if you rent.
+      Don't know your house's assessed value?
+      Enter <code>0</code> if you rent.
       <a href="http://www2.alleghenycounty.us/RealEstate/Default.aspx">Look it up</a>.
-      You'll want the "Total value" under "2020 County Assessed Value".
+      You'll want the "Total value" under the current year's "County Assessed Value".
     </p>
   </div>
   <button type="submit" name="calculate" id="calculate">Calculate</button>
@@ -55,7 +55,7 @@
 <table>
   <thead>
     <tr>
-      <td>Thing</td>
+      <td>Tax</td>
       <td>Wilkinsburg (present)</td>
       <td>Pittsburgh (full merger)</td>
       <td>Increase versus present</td>
@@ -134,8 +134,29 @@
     <dd>
         This would be your estimated taxation should Pittsburgh
         <em>not</em> annex Wilkinsburg but the school districts <em>do</em> merge.
+        The Pittsburgh SD imposes a tax on incomes in addition to property tax.
     </dd>
 </dl>
+
+<p>
+    It is important to understand that the annexation of the municipality
+    and the merger of the school districts are two separate actions requiring approval of five different bodies.
+    <ul>
+        <li>
+            <b>Wilkinsburg voters</b> would have to approve the annexation through a referendum <em>and</em>
+            the <b>City of Pittsburgh council</b> would have to approve it, as well.
+            City voters do not have a direct voice in the matter.
+        </li>
+        <li>
+            For the school districts to merge, according to
+            <a
+                href="https://codes.findlaw.com/pa/title-24-ps-education/pa-st-sect-24-2-224.html" 
+                title="Pennsylvania Statutes Title 24 P.S. Education § 2-224. Combination of school districts"
+                >current PA law</a>,
+            <b>both school boards</b> would each have to approve and <b>the State Board of Education</b> would then have to approve.
+        </li>
+    </ul>
+</p>
 
 <h2>Other notes</h2>
 
