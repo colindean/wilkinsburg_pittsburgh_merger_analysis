@@ -13,7 +13,7 @@ Share this site with a more speakable URL: [`j.mp/cd-wilk-pgh-merger`](https://b
 
 ## Tax Calculator
 
-The tax calculator shows what your household's income and property taxes would be in three scenarios: 
+The tax calculator shows what your household's income and property taxes would be in three scenarios:
 
 1. a full annexation of Wilkinsburg and merger of the school districts
 2. an annexation of the borough that does not include merging the school districts
@@ -21,7 +21,7 @@ The tax calculator shows what your household's income and property taxes would b
 
 ## Tax Graphs
 
-The heat map charts the percentage change difference when accounting for earned income taxes and real estate and school district property tax going from Wilkinsburg to Pittsburgh under the proposed annexation. 
+The heat map charts the percentage change difference when accounting for earned income taxes and real estate and school district property tax going from Wilkinsburg to Pittsburgh under the proposed annexation.
 
 The coloration of the graph is kind of like heat: blue means taxes go down, red means taxes go up. The darker the color, the deeper the change. The white line that is approximately diagonal is where there is ultimately no change in taxation.
 
@@ -29,6 +29,13 @@ The graphs are quite simple math but I've chosen the ranges based on some heuris
 
 * The range for property value is based on June 2021 county assessment data from WPRDC for the whole municipality, but residences only. The mean assessed value is around $41,000 in the standard deviation is about $49,000. Very few are under $20,000 so I chose $20,000 as the starting point and three standard deviations above the mean, approximately $190,000, as the max for that axis.
 * For earned income taxes, I chose $15,000 as approximately full-time minimum wage and $300,000 as two income highly skilled professional household. I don't know where I can get better data on incomes so if you have a suggestion I'm all ears.
+
+It's important to note that _renters_ aren't well represented on the graphs
+because their property taxes are zero: they do not pay property tax directly.
+The owner of the property does.
+Renters can expect to see a net tax increase in the event of a full merger or school district only merger
+unless property owners lower rent voluntarily commensurate with their
+lower property tax burden or through an act of borough or city government.
 
 ## What do I do with this information?
 
