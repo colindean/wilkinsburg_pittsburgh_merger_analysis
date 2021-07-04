@@ -3,7 +3,7 @@ set terminal svg enhanced size 3440,2160 font "Arial, 16" fontscale 1.1 backgrou
 
 set size 1,1
 set origin 0,0
-set multiplot layout 2,2 columnsfirst title "Proposed Wilkinsburg/Pittsburgh Annexation Effect on Total Income and Property Tax for Wilkinsburg Residents" # scale 1.1,0.9
+set multiplot layout 3,2 columnsfirst title "Proposed Wilkinsburg/Pittsburgh Annexation Effect on Total Income and Property Tax for Wilkinsburg Residents" # scale 1.1,0.9
 
 
 # https://alleghenycountytreasurer.us/real-estate-tax/
@@ -38,6 +38,12 @@ wsd_pittsburghre_taxes(income,property) = pittsburgh_city_earned_income_tax(inco
 
 no_sd_merger_pct_change(income,property) = (wsd_pittsburghre_taxes(income,property) / wilkinsburg_taxes(income,property)) * 100
 no_sd_merger_raw_change(income,property) = (wsd_pittsburghre_taxes(income,property) - wilkinsburg_taxes(income,property))
+
+sd_merger_only_taxes(income,property) = wilkinsburg_income_taxes(income) + pittsburgh_sd_earned_income_tax(income) +  pittsburgh_school_property_taxes(property) + wilkinsburg_borough_property_taxes(property)
+
+sd_merger_only_pct_change(income,property) = (sd_merger_only_taxes(income,property) / wilkinsburg_taxes(income,property)) * 100
+sd_merger_only_raw_change(income,property) = (sd_merger_only_taxes(income,property) - wilkinsburg_taxes(income,property))
+
 
 set tic scale 0
 
@@ -136,6 +142,18 @@ GPVAL_Z_MIN '#5548c1',\
 splot no_sd_merger_pct_change(x,y), \
       '++' using (sprintf("%.2f", no_sd_merger_pct_change(x,y))) with labels
 
+### Percent change, SD MERGER
+
+set title "Percent Change in Total Taxes, School Merger Only"
+
+set palette defined(\
+GPVAL_Z_MIN '#5548c1',\
+100 '#ffffff',\
+250 '#b10027')
+
+splot sd_merger_only_pct_change(x,y), \
+      '++' using (sprintf("%.2f", sd_merger_only_pct_change(x,y))) with labels
+
 ### Raw Dollar Change, FULL MERGER
 
 set title "Actual Dollar Change in Total Taxes, Full Merger"
@@ -165,5 +183,16 @@ splot no_sd_merger_raw_change(x,y), \
 
 #splot '++' matrix using 1:2:(pct_change($1,$2)) with image, \
 #      '++' matrix using 1:2:(sprintf("%g", pct_change($1,$2))) with labels
+
+### RAW, school only
+
+set title "Actual Dollar Change in Total Taxes, School Merger Only"
+set palette defined(\
+GPVAL_Z_MIN '#5548c1',\
+0 '#ffffff',\
+5760 '#b10027')
+
+splot sd_merger_only_raw_change(x,y), \
+      '++' using (sprintf("%.2f", sd_merger_only_raw_change(x,y))) with labels
 
 unset multiplot
