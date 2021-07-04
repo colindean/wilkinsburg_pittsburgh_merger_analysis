@@ -81,7 +81,7 @@ unset key
 ei_low = 15000
 ei_high = 300000
 
-pv_low = 20000
+pv_low = 0
 pv_high = 190000
 
 set decimal locale
@@ -93,7 +93,7 @@ set xtics ei_low/3 rotate by 45
 set yrange [ pv_low : pv_high ]
 set ylabel "County-Assessed Property Value"
 set format y "$%'.0f"
-set ytics pv_low
+set ytics 20000
 
 #set pm3d implicit at s
 set pm3d at b
@@ -109,9 +109,9 @@ set view map
 # https://www.census.gov/quickfacts/fact/table/wilkinsburgboroughpennsylvania/PST045219
 # https://censusreporter.org/profiles/16000US4285188-wilkinsburg-pa/
 set arrow from 36743,pv_low to 36743,pv_high nohead front
-set label "Median Household Income (2019) $36.7k" at 36743,0000
+set label "Median Household Income (2019) $36.7k" at 36743,-22000
 set arrow from 50000,pv_low to 50000,pv_high nohead front
-set label "65% of households are under $50k (2019)" at 50000,-6000
+set label "65% of households are under $50k (2019)" at 50000,-28000
 
 ## PROPERTY TAX LINES
 
@@ -132,8 +132,10 @@ set arrow from ei_low,90101.39 to ei_high,90101.39 nohead front
 set label "1σ $90.1k" at -6000,90101.39
 set arrow from ei_low,139101.1 to ei_high,139101.1 nohead front
 set label "2σ $139k" at -8000,135101.1 # collides with ytic
+set arrow from ei_low,188100.2 to ei_high,188100.2 nohead front
+set label "3σ $188k" at -8000,188100.2
 
-set label "Data sources: U.S. Census Bureau QuickFacts, Allegheny County via Western PA Regional Data Center" at -15000,-15000
+set label "Data sources: U.S. Census Bureau QuickFacts, Allegheny County via Western PA Regional Data Center" at -15000,-40000
 
 splot full_pct_change(x,y), \
       '++' using (sprintf("%.2f", full_pct_change(x,y))) with labels
