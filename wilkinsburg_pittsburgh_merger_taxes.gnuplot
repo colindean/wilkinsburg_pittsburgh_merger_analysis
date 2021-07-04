@@ -3,7 +3,7 @@ set terminal svg enhanced size 3440,2160 font "Arial, 16" fontscale 1.1 backgrou
 
 set size 1,1
 set origin 0,0
-set multiplot layout 2,2 columnsfirst title "Proposed Wilkinsburg/Pittsburgh Merger Effect on Total Income and Property Tax for Wilkinsburg Residents" # scale 1.1,0.9
+set multiplot layout 2,2 columnsfirst title "Proposed Wilkinsburg/Pittsburgh Annexation Effect on Total Income and Property Tax for Wilkinsburg Residents" # scale 1.1,0.9
 
 
 # https://alleghenycountytreasurer.us/real-estate-tax/
