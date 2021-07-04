@@ -32,7 +32,7 @@ The graphs are quite simple math but I've chosen the ranges based on some heuris
 
 ## What do I do with this information?
 
-I believe that it's important to 
+I believe that it's important to make informed decisions supported by careful analysis of data. It's on you to decide if the change in taxation is worth it for yourself, but consider also your neighbors.
 
 ## Future Work
 
