@@ -8,6 +8,9 @@
       table {
         border: 1px solid black;
       }
+      tr.highlight {
+        font-weight: bold;
+      }
       td {
         border: 1px solid black;
       }
@@ -123,7 +126,7 @@
       <td id="sch-sdt"></td>
       <td id="sch-sdti"></td>
     </tr>
-    <tr>
+    <tr class="highlight">
       <td>Total Yearly Tax</td>
       <td id="w-tt"></td>
       <td id="p-tt"></td>
@@ -275,6 +278,9 @@
           if (key.endsWith('i')) {
               if (value != 0) {
                 let c = value < 0 ? 'decrease' : 'increase';
+                Array.from(['decrease','increase']).forEach(function(cl){
+                  elem.classList.remove(cl);
+                });
                 elem.classList.add(c);
               }
           }
