@@ -41,7 +41,7 @@
 </defs>
 <g fill="none" color="#FFFFFF" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(1720.0,29.2)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Proposed Wilkinsburg/Pittsburgh Annexation Effect on Total Income and Property Tax for Wilkinsburg Residents</tspan></text>
+		<text><tspan font-family="Arial" >Proposed Wilkinsburg/Pittsburgh Annexation Effect on Total Household Income and Property Tax for Wilkinsburg Residents</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -52,6 +52,9 @@
 	</g>
 	<g transform="translate(290.4,682.7)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median Household Income (2019) $36.7k</tspan></text>
+	</g>
+	<g transform="translate(352.9,699.7)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >65% of households are under $50k (2019)</tspan></text>
 	</g>
 	<g transform="translate(69.9,608.2)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median $26.3k</tspan></text>
@@ -5335,7 +5338,7 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(860.0,682.5)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Earned Income</tspan></text>
+		<text><tspan font-family="Arial" >Household Earned Income</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -5849,14 +5852,17 @@
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='black'  d='M290.4,620.8 L290.4,139.2 M187.8,603.0 L1532.2,603.0 M187.8,561.0 L1532.2,561.0 M187.8,525.2 L1532.2,525.2
-		M187.8,422.2 L1532.2,422.2 M187.8,283.4 L1532.2,283.4  '/></g>
+	<path stroke='black'  d='M290.4,620.8 L290.4,139.2 M352.9,620.8 L352.9,139.2 M187.8,603.0 L1532.2,603.0 M187.8,561.0 L1532.2,561.0
+		M187.8,525.2 L1532.2,525.2 M187.8,422.2 L1532.2,422.2 M187.8,283.4 L1532.2,283.4  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(860.0,820.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
 		<text><tspan font-family="Arial" >Percent Change in Total Taxes, No School Merger</tspan></text>
 	</g>
 	<g transform="translate(290.4,1394.7)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median Household Income (2019) $36.7k</tspan></text>
+	</g>
+	<g transform="translate(352.9,1411.7)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >65% of households are under $50k (2019)</tspan></text>
 	</g>
 	<g transform="translate(69.9,1320.2)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median $26.3k</tspan></text>
@@ -11140,7 +11146,7 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(860.0,1394.5)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Earned Income</tspan></text>
+		<text><tspan font-family="Arial" >Household Earned Income</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -11406,14 +11412,17 @@
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='black'  d='M290.4,1332.8 L290.4,851.2 M187.8,1315.0 L1532.2,1315.0 M187.8,1273.0 L1532.2,1273.0 M187.8,1237.2 L1532.2,1237.2
-		M187.8,1134.2 L1532.2,1134.2 M187.8,995.4 L1532.2,995.4  '/></g>
+	<path stroke='black'  d='M290.4,1332.8 L290.4,851.2 M352.9,1332.8 L352.9,851.2 M187.8,1315.0 L1532.2,1315.0 M187.8,1273.0 L1532.2,1273.0
+		M187.8,1237.2 L1532.2,1237.2 M187.8,1134.2 L1532.2,1134.2 M187.8,995.4 L1532.2,995.4  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(860.0,1532.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
 		<text><tspan font-family="Arial" >Percent Change in Total Taxes, School Merger Only</tspan></text>
 	</g>
 	<g transform="translate(290.4,2106.7)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median Household Income (2019) $36.7k</tspan></text>
+	</g>
+	<g transform="translate(352.9,2123.7)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >65% of households are under $50k (2019)</tspan></text>
 	</g>
 	<g transform="translate(69.9,2032.2)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median $26.3k</tspan></text>
@@ -16697,7 +16706,7 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(860.0,2106.5)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Earned Income</tspan></text>
+		<text><tspan font-family="Arial" >Household Earned Income</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -17198,14 +17207,17 @@
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='black'  d='M290.4,2044.8 L290.4,1563.2 M187.8,2027.0 L1532.2,2027.0 M187.8,1985.0 L1532.2,1985.0 M187.8,1949.2 L1532.2,1949.2
-		M187.8,1846.2 L1532.2,1846.2 M187.8,1707.4 L1532.2,1707.4  '/></g>
+	<path stroke='black'  d='M290.4,2044.8 L290.4,1563.2 M352.9,2044.8 L352.9,1563.2 M187.8,2027.0 L1532.2,2027.0 M187.8,1985.0 L1532.2,1985.0
+		M187.8,1949.2 L1532.2,1949.2 M187.8,1846.2 L1532.2,1846.2 M187.8,1707.4 L1532.2,1707.4  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(2580.0,108.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
 		<text><tspan font-family="Arial" >Actual Dollar Change in Total Taxes, Full Merger</tspan></text>
 	</g>
 	<g transform="translate(2010.4,682.7)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median Household Income (2019) $36.7k</tspan></text>
+	</g>
+	<g transform="translate(2072.9,699.7)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >65% of households are under $50k (2019)</tspan></text>
 	</g>
 	<g transform="translate(1789.9,608.2)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median $26.3k</tspan></text>
@@ -22489,7 +22501,7 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(2580.0,682.5)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Earned Income</tspan></text>
+		<text><tspan font-family="Arial" >Household Earned Income</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -23273,14 +23285,17 @@
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<path stroke='black'  d='M3285.8,139.2  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='black'  d='M2010.4,620.8 L2010.4,139.2 M1907.8,603.0 L3252.2,603.0 M1907.8,561.0 L3252.2,561.0 M1907.8,525.2 L3252.2,525.2
-		M1907.8,422.2 L3252.2,422.2 M1907.8,283.4 L3252.2,283.4  '/></g>
+	<path stroke='black'  d='M2010.4,620.8 L2010.4,139.2 M2072.9,620.8 L2072.9,139.2 M1907.8,603.0 L3252.2,603.0 M1907.8,561.0 L3252.2,561.0
+		M1907.8,525.2 L3252.2,525.2 M1907.8,422.2 L3252.2,422.2 M1907.8,283.4 L3252.2,283.4  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(2580.0,820.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
 		<text><tspan font-family="Arial" >Actual Dollar Change in Total Taxes, No School Merger</tspan></text>
 	</g>
 	<g transform="translate(2010.4,1394.7)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median Household Income (2019) $36.7k</tspan></text>
+	</g>
+	<g transform="translate(2072.9,1411.7)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >65% of households are under $50k (2019)</tspan></text>
 	</g>
 	<g transform="translate(1789.9,1320.2)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median $26.3k</tspan></text>
@@ -28564,7 +28579,7 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(2580.0,1394.5)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Earned Income</tspan></text>
+		<text><tspan font-family="Arial" >Household Earned Income</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -28866,14 +28881,17 @@
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<path stroke='black'  d='M3285.8,851.2  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='black'  d='M2010.4,1332.8 L2010.4,851.2 M1907.8,1315.0 L3252.2,1315.0 M1907.8,1273.0 L3252.2,1273.0 M1907.8,1237.2 L3252.2,1237.2
-		M1907.8,1134.2 L3252.2,1134.2 M1907.8,995.4 L3252.2,995.4  '/></g>
+	<path stroke='black'  d='M2010.4,1332.8 L2010.4,851.2 M2072.9,1332.8 L2072.9,851.2 M1907.8,1315.0 L3252.2,1315.0 M1907.8,1273.0 L3252.2,1273.0
+		M1907.8,1237.2 L3252.2,1237.2 M1907.8,1134.2 L3252.2,1134.2 M1907.8,995.4 L3252.2,995.4  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(2580.0,1532.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
 		<text><tspan font-family="Arial" >Actual Dollar Change in Total Taxes, School Merger Only</tspan></text>
 	</g>
 	<g transform="translate(2010.4,2106.7)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median Household Income (2019) $36.7k</tspan></text>
+	</g>
+	<g transform="translate(2072.9,2123.7)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >65% of households are under $50k (2019)</tspan></text>
 	</g>
 	<g transform="translate(1789.9,2032.2)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median $26.3k</tspan></text>
@@ -34157,7 +34175,7 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(2580.0,2106.5)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="middle">
-		<text><tspan font-family="Arial" >Earned Income</tspan></text>
+		<text><tspan font-family="Arial" >Household Earned Income</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -34902,8 +34920,8 @@
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<path stroke='black'  d='M3285.8,1563.2  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='black'  d='M2010.4,2044.8 L2010.4,1563.2 M1907.8,2027.0 L3252.2,2027.0 M1907.8,1985.0 L3252.2,1985.0 M1907.8,1949.2 L3252.2,1949.2
-		M1907.8,1846.2 L3252.2,1846.2 M1907.8,1707.4 L3252.2,1707.4  '/></g>
+	<path stroke='black'  d='M2010.4,2044.8 L2010.4,1563.2 M2072.9,2044.8 L2072.9,1563.2 M1907.8,2027.0 L3252.2,2027.0 M1907.8,1985.0 L3252.2,1985.0
+		M1907.8,1949.2 L3252.2,1949.2 M1907.8,1846.2 L3252.2,1846.2 M1907.8,1707.4 L3252.2,1707.4  '/></g>
 </g>
 </svg>
 
