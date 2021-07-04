@@ -44,7 +44,11 @@ I believe that it's important to make informed decisions supported by careful an
 ## Future Work
 
 What I would love to do is somehow scale this or carve out areas on the graph that include various percentages of the Wilkinsburg population.
-The graphs do indicate the median household income with a vertical line but I don't have any other data about household incomes in order to find where on the map the majority of Wilkinsburg residents are. According to Census Bureau data, approximately 2/3 of Wilkinsburg households are under $50,000 per year. I don't know how best to represent that in the graph.
+The graphs do indicate the median household income with a vertical line but
+I don't have any other data about household incomes in order to find where on
+the map the majority of Wilkinsburg residents are. According to Census Bureau
+data, approximately 2/3 of Wilkinsburg households are under $50,000 per year.
+I have a line representing that figure on the graph.
 
 ### Help Wanted
 
