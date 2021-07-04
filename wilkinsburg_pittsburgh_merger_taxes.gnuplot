@@ -104,6 +104,8 @@ set view map
 # https://censusreporter.org/profiles/16000US4285188-wilkinsburg-pa/
 set arrow from 36743,20000 to 36743,190000 nohead front
 set label "Median Household Income (2019) $36.7k" at 36743,0000
+set arrow from 50000,20000 to 50000,190000 nohead front
+set label "65% of households are under $50k (2019)" at 50000,0000
 
 ## PROPERTY TAX LINES
 
