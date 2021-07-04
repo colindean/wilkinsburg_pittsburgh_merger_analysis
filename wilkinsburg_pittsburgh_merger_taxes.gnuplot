@@ -78,16 +78,22 @@ set encoding utf8
 #set key Left center top reverse
 unset key
 
+ei_low = 15000
+ei_high = 300000
+
+pv_low = 20000
+pv_high = 190000
+
 set decimal locale
 set xlabel "Household Earned Income"
-set xrange [ 15000 : 300000 ]
+set xrange [ ei_low : ei_high ]
 set format x "$%'.0f"
-set xtics 5000 rotate by 45
+set xtics ei_low/3 rotate by 45
 
-set yrange [ 20000 : 190000 ]
+set yrange [ pv_low : pv_high ]
 set ylabel "County-Assessed Property Value"
 set format y "$%'.0f"
-set ytics 20000
+set ytics pv_low
 
 #set pm3d implicit at s
 set pm3d at b
@@ -102,9 +108,9 @@ set view map
 ## INCOME LINES
 # https://www.census.gov/quickfacts/fact/table/wilkinsburgboroughpennsylvania/PST045219
 # https://censusreporter.org/profiles/16000US4285188-wilkinsburg-pa/
-set arrow from 36743,20000 to 36743,190000 nohead front
+set arrow from 36743,pv_low to 36743,pv_high nohead front
 set label "Median Household Income (2019) $36.7k" at 36743,0000
-set arrow from 50000,20000 to 50000,190000 nohead front
+set arrow from 50000,pv_low to 50000,pv_high nohead front
 set label "65% of households are under $50k (2019)" at 50000,-6000
 
 ## PROPERTY TAX LINES
@@ -113,18 +119,18 @@ set label "65% of households are under $50k (2019)" at 50000,-6000
 #set arrow from 0,9300 to 300000,9300 nohead front
 #set label "1Q" at 0,9300
 # median
-set arrow from 15000,26300 to 300000,26300 nohead front
+set arrow from ei_low,26300 to ei_high,26300 nohead front
 set label "Median $26.3k" at -10000,26300
 # mean
-set arrow from 15000,41102.9 to 300000,41102.9 nohead front
+set arrow from ei_low,41102.9 to ei_high,41102.9 nohead front
 set label "Mean $41.1k" at -8000,45000 # collides with ytic
 # third quartile
-set arrow from 15000,53750 to 300000,53750 nohead front
+set arrow from ei_low,53750 to ei_high,53750 nohead front
 set label "3Q $53.7k" at -7000,53750
 # first stddev
-set arrow from 15000,90101.39 to 300000,90101.39 nohead front
+set arrow from ei_low,90101.39 to ei_high,90101.39 nohead front
 set label "1σ $90.1k" at -6000,90101.39
-set arrow from 15000,139101.1 to 300000,139101.1 nohead front
+set arrow from ei_low,139101.1 to ei_high,139101.1 nohead front
 set label "2σ $139k" at -8000,135101.1 # collides with ytic
 
 set label "Data sources: U.S. Census Bureau QuickFacts, Allegheny County via Western PA Regional Data Center" at -15000,-15000
