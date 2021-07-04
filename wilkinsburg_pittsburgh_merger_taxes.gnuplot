@@ -10,9 +10,12 @@ set multiplot layout 2,2 columnsfirst title "Proposed Wilkinsburg/Pittsburgh Mer
 # 4.73 mills
 allegheny_county_property_taxes(x) = x * (4.73/1000)
 
-#
+# https://www.wilkinsburgpa.gov/departments/finance-department/tax-questions/
 wilkinsburg_income_taxes(x) = x * 0.01
-pittsburgh_income_taxes(x) = x * 0.03
+# https://pittsburghpa.gov/finance/tax-descriptions
+pittsburgh_city_earned_income_tax(x) = x * 0.01
+pittsburgh_sd_earned_income_tax(x) = x * 0.02
+pittsburgh_income_taxes(x) = pittsburgh_city_earned_income_tax(x) + pittsburgh_sd_earned_income_tax(x)
 
 # https://alleghenycountytreasurer.us/real-estate-tax/local-and-school-district-tax-millage/
 wilkinsburg_borough_property_taxes(x) = x * (14.00/1000)
