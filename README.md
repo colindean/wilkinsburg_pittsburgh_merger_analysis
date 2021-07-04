@@ -30,6 +30,10 @@ The graphs are quite simple math but I've chosen the ranges based on some heuris
 * The range for property value is based on June 2021 county assessment data from WPRDC for the whole municipality, but residences only. The mean assessed value is around $41,000 in the standard deviation is about $49,000. Very few are under $20,000 so I chose $20,000 as the starting point and three standard deviations above the mean, approximately $190,000, as the max for that axis.
 * For earned income taxes, I chose $15,000 as approximately full-time minimum wage and $300,000 as two income highly skilled professional household. I don't know where I can get better data on incomes so if you have a suggestion I'm all ears.
 
+## What do I do with this information?
+
+I believe that it's important to 
+
 ## Future Work
 
 What I would love to do is somehow scale this or carve out areas on the graph that include various percentages of the Wilkinsburg population.
@@ -44,3 +48,7 @@ I could use someone interested in make a better small static website for this. I
 Find a problem? Want to say thanks? Raise an [issue](https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/issues/new).
 
 All code for this mini-site, documents, and graphs are available [here](https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis).
+
+## Who Are You?
+
+This information is collected and presented principally by Colin Dean, a long-time resident of Wilkinsburg and poll worker. There may be other [contributors listed on GitHub](https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/graphs/contributors).
