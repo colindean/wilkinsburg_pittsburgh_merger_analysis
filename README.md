@@ -13,11 +13,17 @@ Share this site with a more speakable URL: [`j.mp/cd-wilk-pgh-merger`](https://b
 
 ## Tax Calculator
 
-The tax calculator shows what your income and property taxes would be in two scenarios: a full merger and a merger that does not include the school district.
+The tax calculator shows what your income and property taxes would be in three scenarios: 
+
+1. a full annexation of Wilkinsburg and merger of the school districts
+2. an annexation of the borough that does not include merging the school districts
+3. a merger of the school districts but no annexation of the borough
 
 ## Tax Graphs
 
-The heat map charts the percentage change difference when accounting for earned income tax and real estate and school tax going from Wilkinsburg to Pittsburgh under the proposed merger. Blue means taxes go down, red means taxes go up. The darker the color, the deeper the change. The white line that is approximately diagonal is The sweet spot of no change.
+The heat map charts the percentage change difference when accounting for earned income taxes and real estate and school district property tax going from Wilkinsburg to Pittsburgh under the proposed annexation. 
+
+The coloration of the graph is kind of like heat: blue means taxes go down, red means taxes go up. The darker the color, the deeper the change. The white line that is approximately diagonal is where there is ultimately no change in taxation.
 
 The graphs are quite simple math but I've chosen the ranges based on some heuristics:
 
