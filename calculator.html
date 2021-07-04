@@ -223,8 +223,8 @@
         results.set('w-eit', w_eit(income));
         results.set('p-eit', p_eit(income));
         results.set('p-eiti', p_eit(income) - w_eit(income));
-        results.set('psd-eit', p_eit(income));
-        results.set('psd-eiti', p_eit(income) - w_eit(income));
+        results.set('psd-eit', p_city_eit(income));
+        results.set('psd-eiti', p_city_eit(income) - w_eit(income));
         results.set('sch-eit', w_eit(income) + p_sch_eit(income));
         results.set('sch-eiti', (w_eit(income) + p_sch_eit(income)) - w_eit(income));
 
@@ -247,7 +247,7 @@
 
         let wilk = w_eit(income) + w_ret(property) + w_sdt(property);
         let pgh = p_eit(income) + p_ret(property) + p_sdt(property);
-        let pgh_wilksd =  p_eit(income) + p_ret(property) + w_sdt(property);
+        let pgh_wilksd =  p_city_eit(income) + p_ret(property) + w_sdt(property);
         let wilk_pghsd = w_eit(income) + p_sch_eit(income) + w_ret(property) + p_sdt(property);
 
         results.set('w-tt', wilk);
