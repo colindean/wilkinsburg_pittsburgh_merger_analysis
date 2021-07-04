@@ -3,7 +3,7 @@ set terminal svg enhanced size 3440,2160 font "Arial, 16" fontscale 1.1 backgrou
 
 set size 1,1
 set origin 0,0
-set multiplot layout 3,2 columnsfirst title "Proposed Wilkinsburg/Pittsburgh Annexation Effect on Total Income and Property Tax for Wilkinsburg Residents" # scale 1.1,0.9
+set multiplot layout 3,2 columnsfirst title "Proposed Wilkinsburg/Pittsburgh Annexation Effect on Total Household Income and Property Tax for Wilkinsburg Residents" # scale 1.1,0.9
 
 
 # https://alleghenycountytreasurer.us/real-estate-tax/
@@ -79,7 +79,7 @@ set encoding utf8
 unset key
 
 set decimal locale
-set xlabel "Earned Income"
+set xlabel "Household Earned Income"
 set xrange [ 15000 : 300000 ]
 set format x "$%'.0f"
 set xtics 5000 rotate by 45
