@@ -51,4 +51,4 @@ All code for this mini-site, documents, and graphs are available [here](https://
 
 ## Who Are You?
 
-This information is collected and presented principally by Colin Dean, a long-time resident of Wilkinsburg and poll worker. There may be other [contributors listed on GitHub](https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/graphs/contributors).
+This information is collected and presented principally by Colin Dean, a long-time resident of Wilkinsburg. There may be other [contributors listed on GitHub](https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/graphs/contributors).
