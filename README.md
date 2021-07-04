@@ -13,7 +13,7 @@ Share this site with a more speakable URL: [`j.mp/cd-wilk-pgh-merger`](https://b
 
 ## Tax Calculator
 
-The tax calculator shows what your income and property taxes would be in three scenarios: 
+The tax calculator shows what your household's income and property taxes would be in three scenarios: 
 
 1. a full annexation of Wilkinsburg and merger of the school districts
 2. an annexation of the borough that does not include merging the school districts
