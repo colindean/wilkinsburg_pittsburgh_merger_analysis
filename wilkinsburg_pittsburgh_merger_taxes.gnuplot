@@ -80,27 +80,31 @@ unset key
 
 ei_low = 15000
 ei_high = 300000
+ei_tics = ei_low/3
 
 pv_low = 0
 pv_high = 190000
+pv_tics = 20000
 
 set decimal locale
 set xlabel "Household Earned Income"
 set xrange [ ei_low : ei_high ]
 set format x "$%'.0f"
-set xtics ei_low/3 rotate by 45
+set xtics ei_tics rotate by 45
+#set grid xtics
 
 set yrange [ pv_low : pv_high ]
 set ylabel "County-Assessed Property Value"
 set format y "$%'.0f"
-set ytics 20000
+set ytics pv_tics
+#set grid ytics
 
 #set pm3d implicit at s
 set pm3d at b
 
 set title "Percentage Change of Total Taxes, Full Merger"
 
-set isosamples 47,38
+set isosamples (ei_high/ei_tics)*2,(pv_high/pv_tics)*4
 set style fill solid 1 noborder
 
 set view map
