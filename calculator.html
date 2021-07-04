@@ -34,6 +34,19 @@
         font-size: 16px;
         line-height: 1.5;
       }
+      #wage-helpers {
+        display: inline-block;
+      }
+      #wage-helpers li {
+        display: inline-block;
+      }
+
+      #wage-helpers li.rate button::after {
+        content: "/hr";
+      }
+      #wage-helpers li.rate button::before {
+        content: "$";
+      }
     </style>
   </head>
 <body>
@@ -42,11 +55,21 @@
 <form id="form">
   <div>
     <label for="income">Your Yearly Household Income, no commas</label>
-    <input name="income" id="income" placeholder="35000"/>
+    <input name="income" id="income" placeholder="35000" type="number" min="0" step="0.01"/>
+    <ul id="wage-helpers">
+      <li>quick input full time at</li>
+      <li class="rate"><button>7.25</button></li>
+      <li class="rate"><button>10</button></li>
+      <li class="rate"><button>15</button></li>
+      <li>
+        <label for="other">or use hourly</label>
+        <input name="hourly" id="hourly" type="number" min="0" step="0.01"/>
+      </li>
+    </ul>
   </div>
   <div>
     <label for="property">Your House's Assessed Value</label>
-    <input name="property" id="property" placeholder="50000"/>
+    <input name="property" id="property" placeholder="50000" required type="number" min="0"/>
     <p>
       Don't know your house's assessed value?
       Enter <code>0</code> if you rent.
@@ -188,8 +211,12 @@
     function p_sdt(property) { return property * (9.95/1000); }
 
     function calculate(){
-        let income = document.getElementById('income').value;
-        let property = document.getElementById('property').value;
+        let income = parseFloat(document.getElementById('income').value);
+        if (!income) {
+          income = parseFloat(document.getElementById('hourly').value) * 40 * 52;
+          document.getElementById('income').placeholder = income;
+        }
+        let property = parseFloat(document.getElementById('property').value);
 
         let results = new Map();
 
@@ -255,6 +282,14 @@
         e.preventDefault();
         display(calculate());
       };
+
+      let helpers_list = document.getElementById('wage-helpers')
+      Array.from(helpers_list.getElementsByTagName("button")).forEach(function(button){
+        button.onclick = function(e) {
+          e.preventDefault();
+          document.getElementById('income').value = parseFloat(button.innerText) * 40 * 52;
+        }
+      });
     };
 
     // https://stackoverflow.com/a/11270819/204052
