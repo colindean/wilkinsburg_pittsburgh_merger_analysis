@@ -118,6 +118,7 @@ set label "65% of households are under $50k (2019)" at 50000,-28000
 # first quartile
 #set arrow from 0,9300 to 300000,9300 nohead front
 #set label "1Q" at 0,9300
+set label "(Renters)" at -11000,0
 # median
 set arrow from ei_low,26300 to ei_high,26300 nohead front
 set label "Median $26.3k" at -10000,26300

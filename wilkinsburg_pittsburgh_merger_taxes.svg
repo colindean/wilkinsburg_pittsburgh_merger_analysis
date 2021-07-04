@@ -56,6 +56,9 @@
 	<g transform="translate(352.9,697.0)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >65% of households are under $50k (2019)</tspan></text>
 	</g>
+	<g transform="translate(65.2,626.0)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >(Renters)</tspan></text>
+	</g>
 	<g transform="translate(69.9,559.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median $26.3k</tspan></text>
 	</g>
@@ -5955,6 +5958,9 @@
 	<g transform="translate(352.9,1409.0)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >65% of households are under $50k (2019)</tspan></text>
 	</g>
+	<g transform="translate(65.2,1338.0)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >(Renters)</tspan></text>
+	</g>
 	<g transform="translate(69.9,1271.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median $26.3k</tspan></text>
 	</g>
@@ -11527,6 +11533,9 @@
 	</g>
 	<g transform="translate(352.9,2121.0)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >65% of households are under $50k (2019)</tspan></text>
+	</g>
+	<g transform="translate(65.2,2050.0)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >(Renters)</tspan></text>
 	</g>
 	<g transform="translate(69.9,1983.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median $26.3k</tspan></text>
@@ -17413,6 +17422,9 @@
 	</g>
 	<g transform="translate(2072.9,697.0)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >65% of households are under $50k (2019)</tspan></text>
+	</g>
+	<g transform="translate(1785.2,626.0)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >(Renters)</tspan></text>
 	</g>
 	<g transform="translate(1789.9,559.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median $26.3k</tspan></text>
@@ -23531,6 +23543,9 @@
 	<g transform="translate(2072.9,1409.0)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >65% of households are under $50k (2019)</tspan></text>
 	</g>
+	<g transform="translate(1785.2,1338.0)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >(Renters)</tspan></text>
+	</g>
 	<g transform="translate(1789.9,1271.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median $26.3k</tspan></text>
 	</g>
@@ -29139,6 +29154,9 @@
 	</g>
 	<g transform="translate(2072.9,2121.0)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >65% of households are under $50k (2019)</tspan></text>
+	</g>
+	<g transform="translate(1785.2,2050.0)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
+		<text><tspan font-family="Arial" >(Renters)</tspan></text>
 	</g>
 	<g transform="translate(1789.9,1983.4)" stroke="none" fill="black" font-family="Arial" font-size="17.60"  text-anchor="start">
 		<text><tspan font-family="Arial" >Median $26.3k</tspan></text>
