@@ -103,7 +103,7 @@ set view map
 # https://www.census.gov/quickfacts/fact/table/wilkinsburgboroughpennsylvania/PST045219
 # https://censusreporter.org/profiles/16000US4285188-wilkinsburg-pa/
 set arrow from 36743,20000 to 36743,190000 nohead front
-set label "Median Household Income (2019) $36.7k" at 36743,6000
+set label "Median Household Income (2019) $36.7k" at 36743,0000
 
 ## PROPERTY TAX LINES
 
@@ -115,7 +115,7 @@ set arrow from 15000,26300 to 300000,26300 nohead front
 set label "Median $26.3k" at -10000,26300
 # mean
 set arrow from 15000,41102.9 to 300000,41102.9 nohead front
-set label "Mean $41.1k" at -8000,43000 # collides with ytic
+set label "Mean $41.1k" at -8000,45000 # collides with ytic
 # third quartile
 set arrow from 15000,53750 to 300000,53750 nohead front
 set label "3Q $53.7k" at -7000,53750
