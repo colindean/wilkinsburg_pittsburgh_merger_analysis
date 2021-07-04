@@ -276,11 +276,11 @@
           let dollars = Math.abs(Math.round(value,2)).formatMoney();
           elem.innerText = dollars;
           if (key.endsWith('i')) {
+              Array.from(['decrease','increase']).forEach(function(cl){
+                  elem.classList.remove(cl);
+              });
               if (value != 0) {
                 let c = value < 0 ? 'decrease' : 'increase';
-                Array.from(['decrease','increase']).forEach(function(cl){
-                  elem.classList.remove(cl);
-                });
                 elem.classList.add(c);
               }
           }
