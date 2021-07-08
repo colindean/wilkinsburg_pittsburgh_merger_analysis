@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Wilkinsburg/Pittsburgh Annexation/Merger Calculator</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="This calculator examines a few tax change scenarios should Pittsburgh annex Wilkinsburg. Find how how your taxes would change using this calculator.">
+    <title>Wilkinsburg/Pittsburgh Annexation/Merger Tax Calculator</title>
     <style>
       table {
         border: 1px solid black;
+      }
+      tr.highlight {
+        font-weight: bold;
       }
       td {
         border: 1px solid black;
@@ -16,16 +21,34 @@
         background: #cfc;
       }
       .decrease::after {
-        content: ' less';
+        content: ' less \025BC';
       }
       .increase {
         background: #fcc;
       }
       .increase::after {
-        content: ' more';
+        content: ' more \025B2';
       }
       form {
         margin: 2em;
+      }
+      body {
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      #wage-helpers {
+        display: inline-block;
+      }
+      #wage-helpers li {
+        display: inline-block;
+      }
+
+      #wage-helpers li.rate button::after {
+        content: "/hr";
+      }
+      #wage-helpers li.rate button::before {
+        content: "$";
       }
     </style>
   </head>
@@ -34,17 +57,26 @@
 
 <form id="form">
   <div>
-    <label for="income">Your Household Income, no commas</label>
-    <input name="income" id="income" placeholder="35000"/>
+    <label for="income">Your Yearly <dfn title="Your total earned income, including wages, for yourself and a spouse, if you have one">Household Income</dfn>, no commas</label>
+    <input name="income" id="income" placeholder="35000" type="number" min="0" step="0.01"/>
+    <ul id="wage-helpers">
+      <li>quick input full time at</li>
+      <li class="rate"><button>7.25</button></li>
+      <li class="rate"><button>10</button></li>
+      <li class="rate"><button>15</button></li>
+      <li>
+        <label for="other">or use hourly</label>
+        <input name="hourly" id="hourly" type="number" min="0" step="0.01"/>
+      </li>
+    </ul>
   </div>
   <div>
-    <label for="property">Your House's Assessed Value</label>
-    <input name="property" id="property" placeholder="50000"/>
+    <label for="property">Your House's Assessed Value (or enter <code>0</code> if you rent)</label>
+    <input name="property" id="property" placeholder="50000" required type="number" min="0"/>
     <p>
-      Don't know your assessed value?
-      Enter 0 if you rent.
+      Don't know your house's assessed value?
       <a href="http://www2.alleghenycounty.us/RealEstate/Default.aspx">Look it up</a>.
-      You'll want the "Total value" under "2020 County Assessed Value".
+      You'll want the "Total value" under the current year's "County Assessed Value".
     </p>
   </div>
   <button type="submit" name="calculate" id="calculate">Calculate</button>
@@ -53,11 +85,13 @@
 <table>
   <thead>
     <tr>
-      <td>Thing</td>
+      <td>Tax</td>
       <td>Wilkinsburg (present)</td>
-      <td>Pittsburgh (full merger)</td>
+      <td>Pittsburgh & Pittsburgh SD (full merger)</td>
       <td>Increase versus present</td>
-      <td>Pittsburgh (no school district merger)</td>
+      <td>Wilkinsburg, Pittsburgh SD (school district merger only)</td>
+      <td>Increase versus present</td>
+      <td>Pittsburgh, Wilkinsburg SD (no school district merger)</td>
       <td>Increase versus present</td>
     </tr>
   </thead>
@@ -67,6 +101,8 @@
       <td id="w-eit"></td>
       <td id="p-eit"></td>
       <td id="p-eiti"></td>
+      <td id="sch-eit"></td>
+      <td id="sch-eiti"></td>
       <td id="psd-eit"></td>
       <td id="psd-eiti"></td>
     </tr>
@@ -75,6 +111,8 @@
       <td id="w-ret"></td>
       <td id="p-ret"></td>
       <td id="p-reti"></td>
+      <td id="sch-ret"></td>
+      <td id="sch-reti"></td>
       <td id="psd-ret"></td>
       <td id="psd-reti"></td>
     </tr>
@@ -83,59 +121,159 @@
       <td id="w-sdt"></td>
       <td id="p-sdt"></td>
       <td id="p-sdti"></td>
+      <td id="sch-sdt"></td>
+      <td id="sch-sdti"></td>
       <td id="psd-sdt"></td>
       <td id="psd-sdti"></td>
     </tr>
-    <tr>
-      <td>Total Tax</td>
+    <tr class="highlight">
+      <td>Total Yearly Tax</td>
       <td id="w-tt"></td>
       <td id="p-tt"></td>
       <td id="p-tti"></td>
+      <td id="sch-tt"></td>
+      <td id="sch-tti"></td>
       <td id="psd-tt"></td>
       <td id="psd-tti"></td>
     </tr>
   </tbody>
 </table>
+
+<p>This calculator does not take into account Allegheny County real estate tax. That would not change as a result of the annexation.</p>
+
+<h2>Scenario Descriptions</h2>
+
+<dl>
+    <dt>Wilkinsburg</dt>
+    <dd>
+        Your current taxation as a Wilkinsburg resident, 
+        and what your taxation would be going forward if no annexation occurs.
+    </dd>
+    <dt>Pittsburgh & Pittsburgh SD (full merger)</dt>
+    <dd>
+        This would be your estimated taxation as a Pittsburgh resident,
+        should Pittsburgh annex Wilkinsburg and make no changes to tax rates in the process
+        <em>and</em> the Wilkinsburg and Pittsburgh school districts merge.
+    </dd>
+    <dt>Wilkinsburg, Pittsburgh SD (school district merger only)</dt>
+    <dd>
+        This would be your estimated taxation should Pittsburgh
+        <em>not</em> annex Wilkinsburg but the school districts <em>do</em> merge or
+        Wilkinsburg SD is simply dissolved.
+        The Pittsburgh SD imposes a tax on incomes in addition to property tax.
+        The <a href="https://en.wikipedia.org/wiki/Mount_Oliver,_Pennsylvania#Taxation">Borough of Mt. Oliver</a> uses Pittsburgh SD in this way.
+    </dd>
+    <dt>Pittsburgh, Wilkinsburg SD (no school district merger)</dt>
+    <dd>
+        This would be your estimated taxation if Pittsburgh annexed Wilkinsburg,
+        but the school districts <em>do not merge</em> or delay merging with no adjustment to school tax rates.
+        There currently is no part of the City of Pittsburgh that uses a school district other than
+        Pittsburgh Public Schools, according to
+        <a href="https://commons.wikimedia.org/wiki/File:Map_of_Allegheny_County_Pennsylvania_School_Districts.png">this map of Allegheny County school districts as of 2006</a>.
+    </dd>
+</dl>
+
+<h2>Scenario Notes</h2>
+<p>
+    It is important to understand that the annexation of the municipality
+    and the merger of the school districts are two separate actions requiring approval of five different bodies.
+</p>
+<ul>
+    <li>
+        <b>Wilkinsburg voters</b> would have to approve the annexation through a referendum <em>and</em>
+        the <b>City of Pittsburgh council</b> would have to approve it, as well.
+        City voters do not have a direct voice in the matter.
+    </li>
+    <li>
+        For the school districts to merge, according to
+        <a
+            href="https://codes.findlaw.com/pa/title-24-ps-education/pa-st-sect-24-2-224.html" 
+            title="Pennsylvania Statutes Title 24 P.S. Education § 2-224. Combination of school districts"
+            >current PA law</a>,
+        <b>both school boards</b> would each have to approve and <b>the State Board of Education</b> would then have to approve.
+    </li>
+</ul>
+
+<h2>Other notes</h2>
+  
+<p>
+  Looking for a quick way to lower your property tax for your primary residence by a little?
+  Check out the <a href="https://www.alleghenycounty.us/real-estate/abatements-exemptions/act-50/act-50-faqs.aspx">Homestead/Farmstead Property Tax Relief</a>.
+  <a href="https://www.alleghenycounty.us/real-estate/abatements-exemptions/act-50/act-50-application-process.aspx">Read about the application process</a>
+  and follow the instructions to reduce your primary residence's assessed value.
+  You can take advantage of this program anywhere in Pennsylvania via your county -- the links in this paragraph are directly to Allegheny County resources.
+</p>
+
+<p>Found a problem? Report it <a href="https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/issues/new">here</a>.</p>
+
+<p>Want to make this look better or verify the rates? The code is <a href="https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/blob/main/calculator.html">here</a>.</p>
+
+<p><a href="./">Back to more information</a></p>
+
 <script>
+    // https://www.wilkinsburgpa.gov/departments/finance-department/tax-questions/
     function w_eit(income) { return income * 0.01; }
-    function p_eit(income) { return income * 0.03; }
+
+    // https://pittsburghpa.gov/finance/tax-descriptions
+    function p_sch_eit(income) { return income * 0.02; }
+    function p_city_eit(income) { return income * 0.01; }
+    function p_eit(income) { return p_sch_eit(income) + p_city_eit(income); }
+
+    // https://alleghenycountytreasurer.us/real-estate-tax/local-and-school-district-tax-millage/
     function w_ret(property) { return property * (14.0/1000); }
-    function p_ret(property) { return property * (8.06/1000); }
+    // https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/pull/2#issuecomment-876449576
     function w_sdt(property) { return property * (26.5/1000); }
+
+    function p_ret(property) { return property * (8.06/1000); }
     function p_sdt(property) { return property * (9.95/1000); }
 
     function calculate(){
-        let income = document.getElementById('income').value;
-        let property = document.getElementById('property').value;
+        let income = parseFloat(document.getElementById('income').value);
+        if (!income) {
+          income = parseFloat(document.getElementById('hourly').value) * 40 * 52;
+          document.getElementById('income').placeholder = income;
+        }
+        let property = parseFloat(document.getElementById('property').value);
 
         let results = new Map();
 
         results.set('w-eit', w_eit(income));
         results.set('p-eit', p_eit(income));
         results.set('p-eiti', p_eit(income) - w_eit(income));
-        results.set('psd-eit', p_eit(income));
-        results.set('psd-eiti', p_eit(income) - w_eit(income));
+        results.set('psd-eit', p_city_eit(income));
+        results.set('psd-eiti', p_city_eit(income) - w_eit(income));
+        results.set('sch-eit', w_eit(income) + p_sch_eit(income));
+        results.set('sch-eiti', (w_eit(income) + p_sch_eit(income)) - w_eit(income));
 
         results.set('w-ret', w_ret(property));
         results.set('p-ret', p_ret(property));
         results.set('p-reti', p_ret(property) - w_ret(property));
         results.set('psd-ret', p_ret(property));
         results.set('psd-reti', p_ret(property) - w_ret(property));
+        results.set('sch-ret', w_ret(property));
+        results.set('sch-reti', 0.0);
 
         results.set('w-sdt', w_sdt(property));
         results.set('p-sdt', p_sdt(property));
         results.set('p-sdti', p_sdt(property) - w_sdt(property));
         results.set('psd-sdt', w_sdt(property));
         results.set('psd-sdti', 0.0);
+        results.set('sch-sdt', p_sdt(property));
+        results.set('sch-sdti', p_sdt(property) - w_sdt(property));
+
 
         let wilk = w_eit(income) + w_ret(property) + w_sdt(property);
         let pgh = p_eit(income) + p_ret(property) + p_sdt(property);
-        let pgh_wilksd =  p_eit(income) + p_ret(property) + w_sdt(property);
+        let pgh_wilksd =  p_city_eit(income) + p_ret(property) + w_sdt(property);
+        let wilk_pghsd = w_eit(income) + p_sch_eit(income) + w_ret(property) + p_sdt(property);
+
         results.set('w-tt', wilk);
         results.set('p-tt', pgh);
         results.set('p-tti', pgh - wilk);
         results.set('psd-tt', pgh_wilksd);
         results.set('psd-tti', pgh_wilksd - wilk);
+        results.set('sch-tt', wilk_pghsd);
+        results.set('sch-tti', wilk_pghsd - wilk);
 
         return results;
     }
@@ -144,10 +282,16 @@
         results.forEach(function(value, key) {
           console.log(key + ' = ' + value);
           let elem = document.getElementById(key);
-          elem.innerText = Math.abs(Math.round(value,2)).formatMoney();
-          if(key.endsWith('i')){
-              let c = value < 0 ? 'decrease' : 'increase'
-              elem.classList.add(c);
+          let dollars = Math.abs(Math.round(value,2)).formatMoney();
+          elem.innerText = dollars;
+          if (key.endsWith('i')) {
+              Array.from(['decrease','increase']).forEach(function(cl){
+                  elem.classList.remove(cl);
+              });
+              if (value != 0) {
+                let c = value < 0 ? 'decrease' : 'increase';
+                elem.classList.add(c);
+              }
           }
         });
     }
@@ -158,6 +302,14 @@
         e.preventDefault();
         display(calculate());
       };
+
+      let helpers_list = document.getElementById('wage-helpers')
+      Array.from(helpers_list.getElementsByTagName("button")).forEach(function(button){
+        button.onclick = function(e) {
+          e.preventDefault();
+          document.getElementById('income').value = parseFloat(button.innerText) * 40 * 52;
+        }
+      });
     };
 
     // https://stackoverflow.com/a/11270819/204052
