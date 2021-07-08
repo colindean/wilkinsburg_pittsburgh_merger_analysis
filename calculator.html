@@ -140,6 +140,14 @@
 </table>
 
 <p>This calculator does not take into account Allegheny County real estate tax. That would not change as a result of the annexation.</p>
+  
+<p>
+  The calculator was updated <time datetime="2021-07-08">July 8</time> to reflect the 
+  2021-2022 Wilkinsburg SD school real estate tax reduction to 26.5 mills, 
+  approved at the <time datetime="2021-06-22">June 22</time> board meeting.
+  Calculations performed before July 8 do not include this and the present Wilkinsburg
+  scenario is now lower.
+</p>
 
 <h2>Scenario Descriptions</h2>
 
@@ -221,7 +229,8 @@
 
     // https://alleghenycountytreasurer.us/real-estate-tax/local-and-school-district-tax-millage/
     function w_ret(property) { return property * (14.0/1000); }
-    function w_sdt(property) { return property * (29.5/1000); }
+    // https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/pull/2#issuecomment-876449576
+    function w_sdt(property) { return property * (26.5/1000); }
 
     function p_ret(property) { return property * (8.06/1000); }
     function p_sdt(property) { return property * (9.95/1000); }
