@@ -31,7 +31,7 @@ The heat map charts the percentage change difference when accounting for earned 
 
 Three version of the graph are provided:
 
-1. a [scalable version](wilkinsburg_pittsburgh_merger_taxes.svg) that should look good on all screens (SVG)
+1. a [scalable version](wilkinsburg_pittsburgh_merger_taxes.svg) that should look good on all screens and when printed (SVG)
 2. a [compressed version](wilkinsburg_pittsburgh_merger_taxes.png) that's easy to share on social media (PNG)
 2. a [more compressed version](wilkinsburg_pittsburgh_merger_taxes.webp) that's smaller for email and mobile phones (WEBP)
 
