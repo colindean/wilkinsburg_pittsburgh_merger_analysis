@@ -95,7 +95,7 @@ I try to act on bug reports quickly.
 However, as a volunteer, most of my time spent on this is on the weekends and late evenings,
 so there could be a few days delay before I'm able to address your concerns.
 
-## Who Are You?
+## Who Built This?
 
 This information is collected and presented principally by Colin Dean, a long-time resident of Wilkinsburg.
 There may be other [contributors listed on GitHub](https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/graphs/contributors).
