@@ -5,7 +5,7 @@ MUNI_CODE ?= 866
 CLASS_RESIDENCE = RESIDENTIAL
 
 GNUPLOT_FILES = $(wildcard *.gnuplot)
-TARGETS = $(GNUPLOT_FILES:gnuplot=svg) $(GNUPLOT_FILES:gnuplot=png)
+TARGETS = $(GNUPLOT_FILES:gnuplot=svg) $(GNUPLOT_FILES:gnuplot=png) $(GNUPLOT_FILES:gnuplot=webp)
 
 ASSESSMENTS = assessments.csv
 ASSESSMENTS_WILKINSBURG = wilkinsburg.csv
@@ -20,6 +20,7 @@ GNUPLOT ?= gnuplot
 CURL ?=
 INKSCAPE ?= flatpak run org.inkscape.Inkscape
 PNGCRUSH ?= pngcrush
+CWEBP ?= cwebp
 
 all: $(TARGETS) ## Create all artifacts
 
@@ -33,6 +34,9 @@ help:
 %.png: %.svg
 	$(INKSCAPE) --export-filename=$@ --export-overwrite --export-type=png $<
 	$(PNGCRUSH) -ow $@
+
+%.webp: %.png
+	$(CWEBP) -preset drawing $< -o $@
 
 debug: ## Print key variables
 	@echo "GNUPLOT_FILES: $(GNUPLOT_FILES)"
