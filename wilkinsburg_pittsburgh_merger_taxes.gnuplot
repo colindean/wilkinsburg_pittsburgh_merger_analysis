@@ -83,7 +83,7 @@ ei_high = 300000
 ei_tics = ei_low/3
 
 pv_low = 0
-pv_high = 190000
+pv_high = 200000
 pv_tics = 20000
 
 set decimal locale
@@ -112,35 +112,47 @@ set view map
 ## INCOME LINES
 # https://www.census.gov/quickfacts/fact/table/wilkinsburgboroughpennsylvania/PST045219
 # https://censusreporter.org/profiles/16000US4285188-wilkinsburg-pa/
-set arrow from 36743,pv_low to 36743,pv_high nohead front
-set label "Median Household Income (2019) $36.7k" at 36743,-22000
-set arrow from 50000,pv_low to 50000,pv_high nohead front
-set label "65% of households are under $50k (2019)" at 50000,-28000
+ei_med = 36743.0
+ei_65pct = 50000.0
+ei_stat_year = 2019
+set arrow from ei_med,pv_low to ei_med,pv_high nohead front
+set label sprintf("Median Household Income $%'.1fk (%0.0f)", ei_med/1000, ei_stat_year) at ei_med,-23000
+set arrow from ei_65pct,pv_low to ei_65pct,pv_high nohead front
+set label sprintf("65%% of households are under $%'.0fk (%0.0f)", ei_65pct/1000, ei_stat_year) at ei_65pct,-30000
 
 ## PROPERTY TAX LINES
 
+pv_1q = 17200.0
+pv_med = 33000.0
+pv_3q = 62400.0
+pv_mean = 48402.4
+pv_stddev = 50137.1
+
+nth_pv_stddev(x) = pv_mean + (pv_stddev * x)
+
 # first quartile
-#set arrow from 0,9300 to 300000,9300 nohead front
-#set label "1Q" at 0,9300
+set arrow from ei_low,pv_1q to ei_high,pv_1q nohead front
+set label sprintf("1Q $%'0.1fk", pv_1q / 1000) at -3000,(pv_1q-4000) # collides with ytic
 set label "(Renters)" at -11000,0
 # median
-set arrow from ei_low,26300 to ei_high,26300 nohead front
-set label "Median $26.3k" at -10000,26300
+set arrow from ei_low,pv_med to ei_high,pv_med nohead front
+set label sprintf("Median $%'0.1fk", pv_med / 1000) at -10000,pv_med
 # mean
-set arrow from ei_low,41102.9 to ei_high,41102.9 nohead front
-set label "Mean $41.1k" at -8000,45000 # collides with ytic
+set arrow from ei_low,pv_mean to ei_high,pv_mean nohead front
+set label sprintf("Mean $%'0.1fk", pv_mean / 1000) at -7000,(pv_mean + 4000) # collides with ytic
 # third quartile
-set arrow from ei_low,53750 to ei_high,53750 nohead front
-set label "3Q $53.7k" at -7000,53750
+set arrow from ei_low,pv_3q to ei_high,pv_3q nohead front
+set label sprintf("3Q $%'0.1fk", pv_3q / 1000) at -3000,(pv_3q+4000) # collides with ytic
 # first stddev
-set arrow from ei_low,90101.39 to ei_high,90101.39 nohead front
-set label "1σ $90.1k" at -6000,90101.39
-set arrow from ei_low,139101.1 to ei_high,139101.1 nohead front
-set label "2σ $139k" at -8000,135101.1 # collides with ytic
-set arrow from ei_low,188100.2 to ei_high,188100.2 nohead front
-set label "3σ $188k" at -8000,188100.2
+set arrow from ei_low,nth_pv_stddev(1) to ei_high,nth_pv_stddev(1) nohead front
+set label sprintf("1σ $%'0.1fk", nth_pv_stddev(1)/1000) at -2000,(nth_pv_stddev(1)-4000) # collides with ytic
+set arrow from ei_low,nth_pv_stddev(2) to ei_high,nth_pv_stddev(2) nohead front
+set label sprintf("2σ $%'0.1fk", nth_pv_stddev(2)/1000) at -4000,(nth_pv_stddev(2)-2000) # collides with ytic
+set arrow from ei_low,nth_pv_stddev(3) to ei_high,nth_pv_stddev(3) nohead front
+set label sprintf("3σ $%'0.1fk", nth_pv_stddev(3)/1000) at -4000,(nth_pv_stddev(3)-6000)
 
 set label "Data sources: U.S. Census Bureau QuickFacts, Allegheny County via Western PA Regional Data Center" at -15000,-40000
+set label "Assessment statistics include only parcels that are residential with buildings that are not condemned." at -15000,-46000
 
 splot full_pct_change(x,y), \
       '++' using (sprintf("%.2f", full_pct_change(x,y))) with labels

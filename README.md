@@ -11,6 +11,12 @@ Share this site with a more speakable URL: [`j.mp/cd-wilk-pgh-merger`](https://b
 
 ![QRcode to the link above](bitly-qrcode.png)
 
+## What do I do with this information?
+
+I believe that it's important to make informed decisions supported by careful analysis of data.
+It's on you to decide if the change in taxation is worth it for yourself, but consider also your neighbors.
+
+
 ## Tax Calculator
 
 The tax calculator shows what your household's income and property taxes would be in three scenarios:
@@ -27,8 +33,10 @@ The coloration of the graph is kind of like heat: blue means taxes go down, red 
 
 The graphs are quite simple math but I've chosen the ranges based on some heuristics:
 
-* The range for property value is based on June 2021 county assessment data from WPRDC for the whole municipality, but residences only. The mean assessed value is around $41,000 in the standard deviation is about $49,000. Very few are under $20,000 so I chose $20,000 as the starting point and three standard deviations above the mean, approximately $190,000, as the max for that axis.
-* For earned income taxes, I chose $15,000 as approximately full-time minimum wage and $300,000 as two income highly skilled professional household. I don't know where I can get better data on incomes so if you have a suggestion I'm all ears.
+* The range for property value is based on June 2021 county assessment data from WPRDC for the whole municipality, but residences only.
+  * The mean assessed value is around $48,000 in the standard deviation is about $50,000. I chose zero as the starting point for the benefit of renters and a little more than three standard deviations above the mean, approximately $200,000, as the max for that axis.
+* For earned income taxes, I chose $15,000 as approximately full-time minimum wage and $300,000 as a two-income, highly-skilled professional household. I don't know where I can get better data on incomes so if you have a suggestion I'm all ears.
+  * Noted on the graphs are the median income and 65% mark according to the US Census Bureau.
 
 It's important to note that _renters_ aren't well represented on the graphs
 because their property taxes are zero: they do not pay property tax directly.
@@ -37,9 +45,18 @@ Renters can expect to see a net tax increase in the event of a full merger or sc
 unless property owners lower rent voluntarily commensurate with their
 lower property tax burden or through an act of borough or city government.
 
-## What do I do with this information?
+### A quick refresher on statistics
 
-I believe that it's important to make informed decisions supported by careful analysis of data. It's on you to decide if the change in taxation is worth it for yourself, but consider also your neighbors.
+The graphs bear some abbreviations of statistical terminology to help explain _where_ in the dataset some real numbers are.
+
+|Symbol|Term|Meaning|
+|---|---|---|
+|1Q|First [quartile](https://en.wikipedia.org/wiki/Quartile)|25% or 1/4 are below this level, 75% or 3/4 are above it|
+|Med|[Median](https://en.wikipedia.org/wiki/Median)|Approximately 50% are below and above this level, also called _second quartile_|
+|3Q|Third [quartile](https://en.wikipedia.org/wiki/Quartile)|75% or 3/4 are below this level, 25% or 1/4 are above it|
+|x̄|[Mean](https://en.wikipedia.org/wiki/Mean)|The mathematical average, the sum of the amounts divided by the count of amounts|
+|σ / stddev|[Standard deviation](https://en.wikipedia.org/wiki/Standard_deviation)|A measure of variation from the mean; the smaller the stddev, the closer in general the amounts are to the mean|
+|1σ/2σ/3σ|First/second/third standard deviation|The number of standard deviations away from the mean, see also [68-95-99.7 rule](https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule).|
 
 ## Future Work
 
@@ -60,6 +77,17 @@ Find a problem? Want to say thanks? Raise an [issue](https://github.com/colindea
 
 All code for this mini-site, documents, and graphs are available [here](https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis).
 
+## Quality Assurance
+
+All sources of information should be cited.
+If you find a fact or figure that isn't cited and it is represented as factual,
+please raise an issue on the repository.
+
+I try to act on bug reports quickly.
+However, as a volunteer, most of my time spent on this is on the weekends and late evenings,
+so there could be a few days delay before I'm able to address your concerns.
+
 ## Who Are You?
 
-This information is collected and presented principally by Colin Dean, a long-time resident of Wilkinsburg. There may be other [contributors listed on GitHub](https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/graphs/contributors).
+This information is collected and presented principally by Colin Dean, a long-time resident of Wilkinsburg.
+There may be other [contributors listed on GitHub](https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/graphs/contributors).
