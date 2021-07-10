@@ -1,4 +1,6 @@
-# edit at https://thetimetube.herokuapp.com/gnuplotviewer/
+# Copyright 2021 Colin Dean
+# Some rights reserved. See LICENSE.md for details
+
 set terminal svg enhanced size 3440,2160 font "Arial, 16" fontscale 1.1 background '#ffffff'
 
 set size 1,1
