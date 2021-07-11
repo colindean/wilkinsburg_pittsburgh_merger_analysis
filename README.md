@@ -91,6 +91,9 @@ All sources of information should be cited.
 If you find a fact or figure that isn't cited and it is represented as factual,
 please raise an issue on the repository.
 
+The figures provided by these materials should be treated as estimates.
+Some information may grow out of date over time.
+
 I try to act on bug reports quickly.
 However, as a volunteer, most of my time spent on this is on the weekends and late evenings,
 so there could be a few days delay before I'm able to address your concerns.
