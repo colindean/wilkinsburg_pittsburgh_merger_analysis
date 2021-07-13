@@ -62,7 +62,7 @@ Some rights reserved. See LICENSE.md for details.
 <form id="form">
   <div>
     <label for="income">Your Yearly <dfn title="Your total earned income, including wages, for yourself and a spouse, if you have one">Household Income</dfn>, no commas</label>
-    <input name="income" id="income" placeholder="35000" type="number" min="0" step="0.01"/>
+    <input name="income" id="income" placeholder="36700" type="number" min="0" step="0.01"/>
     <ul id="wage-helpers">
       <li>quick input full time at</li>
       <li class="rate"><button>7.25</button></li>
@@ -76,7 +76,7 @@ Some rights reserved. See LICENSE.md for details.
   </div>
   <div>
     <label for="property">Your House's Assessed Value (or enter <code>0</code> if you rent)</label>
-    <input name="property" id="property" placeholder="50000" required type="number" min="0"/>
+    <input name="property" id="property" placeholder="33000" required type="number" min="0"/>
     <p>
       Don't know your house's assessed value?
       <a href="http://www2.alleghenycounty.us/RealEstate/Default.aspx">Look it up</a>.
@@ -144,14 +144,6 @@ Some rights reserved. See LICENSE.md for details.
 </table>
 
 <p>This calculator does not take into account Allegheny County real estate tax. That would not change as a result of the annexation.</p>
-
-<p>
-  The calculator was updated <time datetime="2021-07-08">July 8</time> to reflect the
-  2021-2022 Wilkinsburg SD school real estate tax reduction to 26.5 mills,
-  approved at the <time datetime="2021-06-22">June 22</time> board meeting.
-  Calculations performed before July 8 do not include this and the present Wilkinsburg
-  scenario is now lower.
-</p>
 
 <h2>Scenario Descriptions</h2>
 
@@ -221,6 +213,27 @@ Some rights reserved. See LICENSE.md for details.
 <p>Want to make this look better or verify the rates? The code is <a href="https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/blob/main/calculator.html">here</a>.</p>
 
 <p><a href="./">Back to more information</a></p>
+  
+<h2 id="changelog">Changelog</h2>
+  
+<ul>
+  <li><p>
+    <time datetime="2021-07-13">July 13</time>: The calculator had a bug that double-counted
+    EIT in the "school merger only" scenario and failed to account for higher city EIT in the
+    "no school merger" scenario. The effect on the former is miniscule but the effect on the latter
+    is significant. Sorry for the error and thanks to Chris Peplin for providing 
+    <a href="https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/pull/6">a fix</a> for
+    <a href="https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/issues/5">the problem</a>
+    I identified but didn't have time to fix on July 8.
+  </p></li>
+
+  <li><p>
+    <time datetime="2021-07-08">July 8</time>: The calculator was updated to reflect the
+    2021-2022 Wilkinsburg SD school real estate tax reduction to 26.5 mills,
+    approved at the <time datetime="2021-06-22">June 22</time> board meeting.
+    Calculations performed before July 8 do not include this and the present Wilkinsburg
+    scenario is now lower.
+  </p></li>
 
 <script>
     // https://www.wilkinsburgpa.gov/departments/finance-department/tax-questions/
