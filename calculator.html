@@ -224,7 +224,9 @@ Some rights reserved. See LICENSE.md for details.
 
 <script>
     // https://www.wilkinsburgpa.gov/departments/finance-department/tax-questions/
-    function w_eit(income) { return income * 0.01; }
+    function w_sch_eit(income) { return income * 0.005; }
+    function w_city_eit(income) { return income * 0.005; }
+    function w_eit(income) { return w_sch_eit(income) + w_city_eit(income); }
 
     // https://pittsburghpa.gov/finance/tax-descriptions
     function p_sch_eit(income) { return income * 0.02; }
@@ -249,43 +251,45 @@ Some rights reserved. See LICENSE.md for details.
 
         let results = new Map();
 
-        results.set('w-eit', w_eit(income));
-        results.set('p-eit', p_eit(income));
-        results.set('p-eiti', p_eit(income) - w_eit(income));
-        results.set('psd-eit', p_city_eit(income));
-        results.set('psd-eiti', p_city_eit(income) - w_eit(income));
-        results.set('sch-eit', w_eit(income) + p_sch_eit(income));
-        results.set('sch-eiti', (w_eit(income) + p_sch_eit(income)) - w_eit(income));
-
-        results.set('w-ret', w_ret(property));
-        results.set('p-ret', p_ret(property));
-        results.set('p-reti', p_ret(property) - w_ret(property));
-        results.set('psd-ret', p_ret(property));
-        results.set('psd-reti', p_ret(property) - w_ret(property));
-        results.set('sch-ret', w_ret(property));
-        results.set('sch-reti', 0.0);
-
-        results.set('w-sdt', w_sdt(property));
-        results.set('p-sdt', p_sdt(property));
-        results.set('p-sdti', p_sdt(property) - w_sdt(property));
-        results.set('psd-sdt', w_sdt(property));
-        results.set('psd-sdti', 0.0);
-        results.set('sch-sdt', p_sdt(property));
-        results.set('sch-sdti', p_sdt(property) - w_sdt(property));
-
-
+        // Present Wilkinsburg values
         let wilk = w_eit(income) + w_ret(property) + w_sdt(property);
-        let pgh = p_eit(income) + p_ret(property) + p_sdt(property);
-        let pgh_wilksd =  p_city_eit(income) + p_ret(property) + w_sdt(property);
-        let wilk_pghsd = w_eit(income) + p_sch_eit(income) + w_ret(property) + p_sdt(property);
-
+        results.set('w-eit', w_eit(income));
+        results.set('w-ret', w_ret(property));
+        results.set('w-sdt', w_sdt(property));
         results.set('w-tt', wilk);
+
+        // Full merger
+        let pgh = p_eit(income) + p_ret(property) + p_sdt(property);
+        results.set('p-eit', p_eit(income));
+        results.set('p-eiti', results.get('p-eit') - w_eit(income));
+        results.set('p-ret', p_ret(property));
+        results.set('p-reti', results.get('p-ret') - w_ret(property));
+        results.set('p-sdt', p_sdt(property));
+        results.set('p-sdti', results.get('p-sdt') - w_sdt(property));
         results.set('p-tt', pgh);
         results.set('p-tti', pgh - wilk);
-        results.set('psd-tt', pgh_wilksd);
-        results.set('psd-tti', pgh_wilksd - wilk);
+
+        // School district merger only
+        let wilk_pghsd = w_city_eit(income) + p_sch_eit(income) + w_ret(property) + p_sdt(property);
+        results.set('sch-eit', w_city_eit(income) + p_sch_eit(income));
+        results.set('sch-eiti', results.get('sch-eit') - w_eit(income));
+        results.set('sch-ret', w_ret(property));
+        results.set('sch-reti', 0.0);
+        results.set('sch-sdt', p_sdt(property));
+        results.set('sch-sdti', results.get('sch-sdt') - w_sdt(property));
         results.set('sch-tt', wilk_pghsd);
         results.set('sch-tti', wilk_pghsd - wilk);
+
+        // City/borough merger only
+        let pgh_wilksd =  p_city_eit(income) + w_sch_eit(income) + p_ret(property) + w_sdt(property);
+        results.set('psd-eit', p_city_eit(income) + w_sch_eit(income));
+        results.set('psd-eiti', results.get('psd-eit') - w_eit(income));
+        results.set('psd-ret', p_ret(property));
+        results.set('psd-reti', results.get('psd-ret') - w_ret(property));
+        results.set('psd-sdt', w_sdt(property));
+        results.set('psd-sdti', 0.0);
+        results.set('psd-tt', pgh_wilksd);
+        results.set('psd-tti', pgh_wilksd - wilk);
 
         return results;
     }
