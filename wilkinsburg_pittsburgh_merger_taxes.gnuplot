@@ -13,7 +13,10 @@ set multiplot layout 3,2 columnsfirst title "Proposed Wilkinsburg/Pittsburgh Ann
 allegheny_county_property_taxes(x) = x * (4.73/1000)
 
 # https://www.wilkinsburgpa.gov/departments/finance-department/tax-questions/
-wilkinsburg_income_taxes(x) = x * 0.01
+wilkinsburg_borough_income_taxes(x) = x * 0.005
+wilkinsburg_sd_income_taxes(x) = x * 0.005
+wilkinsburg_income_taxes(x) = wilkinsburg_borough_income_taxes(x) + wilkinsburg_sd_income_taxes(x)
+
 # https://pittsburghpa.gov/finance/tax-descriptions
 pittsburgh_city_earned_income_tax(x) = x * 0.01
 pittsburgh_sd_earned_income_tax(x) = x * 0.02
@@ -36,12 +39,18 @@ pittsburgh_taxes(income,property) = pittsburgh_income_taxes(income) + pittsburgh
 full_pct_change(income,property) = (pittsburgh_taxes(income,property) / wilkinsburg_taxes(income,property)) * 100
 full_raw_change(income,property) = (pittsburgh_taxes(income,property) - wilkinsburg_taxes(income,property))
 
-wsd_pittsburghre_taxes(income,property) = pittsburgh_city_earned_income_tax(income) + pittsburgh_city_real_estate_tax(property) + wilkinsburg_school_property_taxes(property)
+wsd_pittsburghre_taxes(income,property) = pittsburgh_city_earned_income_tax(income) + \
+                                          pittsburgh_city_real_estate_tax(property) + \
+                                          wilkinsburg_school_property_taxes(property) + \
+                                          wilkinsburg_sd_income_taxes(income)
 
 no_sd_merger_pct_change(income,property) = (wsd_pittsburghre_taxes(income,property) / wilkinsburg_taxes(income,property)) * 100
 no_sd_merger_raw_change(income,property) = (wsd_pittsburghre_taxes(income,property) - wilkinsburg_taxes(income,property))
 
-sd_merger_only_taxes(income,property) = wilkinsburg_income_taxes(income) + pittsburgh_sd_earned_income_tax(income) +  pittsburgh_school_property_taxes(property) + wilkinsburg_borough_property_taxes(property)
+sd_merger_only_taxes(income,property) = wilkinsburg_borough_income_taxes(income) + \
+                                        wilkinsburg_borough_property_taxes(property) + \
+                                        pittsburgh_sd_earned_income_tax(income) + \
+                                        pittsburgh_school_property_taxes(property)
 
 sd_merger_only_pct_change(income,property) = (sd_merger_only_taxes(income,property) / wilkinsburg_taxes(income,property)) * 100
 sd_merger_only_raw_change(income,property) = (sd_merger_only_taxes(income,property) - wilkinsburg_taxes(income,property))
@@ -64,7 +73,7 @@ set style line 8 lt 1 lc rgb '#b10027' #
 set palette defined(\
 40 '#5548c1',\
 100 '#ffffff',\
-250 '#b10027')
+310.0 '#b10027')
 
 set cblabel "Percent Change in Total Taxes"
 set format cb "%.1f%%"
@@ -164,9 +173,9 @@ splot full_pct_change(x,y), \
 set title "Percent Change in Total Taxes, No School Merger"
 
 set palette defined(\
-GPVAL_Z_MIN '#5548c1',\
-100 '#ffffff')#,\
-#GPVAL_Z_MAX '#b10027')
+80.0 '#5548c1',\
+100.0 '#ffffff',\
+160.0 '#b10027')
 
 splot no_sd_merger_pct_change(x,y), \
       '++' using (sprintf("%.2f", no_sd_merger_pct_change(x,y))) with labels
@@ -176,9 +185,9 @@ splot no_sd_merger_pct_change(x,y), \
 set title "Percent Change in Total Taxes, School Merger Only"
 
 set palette defined(\
-GPVAL_Z_MIN '#5548c1',\
-100 '#ffffff',\
-250 '#b10027')
+60.0 '#5548c1',\
+100.0 '#ffffff',\
+260.0 '#b10027')
 
 splot sd_merger_only_pct_change(x,y), \
       '++' using (sprintf("%.2f", sd_merger_only_pct_change(x,y))) with labels
@@ -191,9 +200,9 @@ set format cb "$%'.0f"
 set cbtics 240
 
 set palette defined(\
--4560 '#5548c1',\
+-4320.0 '#5548c1',\
 0 '#ffffff',\
-5520 '#b10027')
+6000.0 '#b10027')
 
 splot full_raw_change(x,y), \
       '++' using (sprintf("%.2f", full_raw_change(x,y))) with labels
@@ -203,9 +212,9 @@ splot full_raw_change(x,y), \
 set title "Actual Dollar Change in Total Taxes, No School Merger"
 
 set palette defined(\
-GPVAL_Z_MIN '#5548c1',\
-0 '#ffffff')#,\
-#GPVAL_Z_MAX '#b10027')
+-1200.0 '#5548c1',\
+0.0 '#ffffff',\
+1680.0 '#b10027')
 
 splot no_sd_merger_raw_change(x,y), \
       '++' using (sprintf("%.2f", no_sd_merger_raw_change(x,y))) with labels
@@ -217,9 +226,9 @@ splot no_sd_merger_raw_change(x,y), \
 
 set title "Actual Dollar Change in Total Taxes, School Merger Only"
 set palette defined(\
-GPVAL_Z_MIN '#5548c1',\
-0 '#ffffff',\
-5760 '#b10027')
+-3120.0 '#5548c1',\
+0.0 '#ffffff',\
+4560.0 '#b10027')
 
 splot sd_merger_only_raw_change(x,y), \
       '++' using (sprintf("%.2f", sd_merger_only_raw_change(x,y))) with labels
