@@ -271,7 +271,11 @@ Some rights reserved. See LICENSE.md for details.
     // https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/pull/2#issuecomment-876449576
     function w_sdt(property) { return property * (26.5/1000); }
 
-    function p_ret(property) { return property * (8.06/1000); }
+    // https://pittsburghpa.gov/finance/tax-faqs#29
+    function p_ret_realestate(property) { return property * (8.06/1000); }
+    // https://pittsburghpa.gov/finance/tax-descriptions#476
+    function p_ret_parktax(property) { return property * (0.50/1000); }
+    function p_ret(property) { return p_ret_realestate(property) + p_ret_parktax(property); }
     function p_sdt(property) { return property * (9.95/1000); }
 
     function calculate(){
