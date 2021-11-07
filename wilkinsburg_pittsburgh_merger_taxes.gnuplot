@@ -26,8 +26,11 @@ pittsburgh_income_taxes(x) = pittsburgh_city_earned_income_tax(x) + pittsburgh_s
 wilkinsburg_borough_property_taxes(x) = x * (14.00/1000)
 wilkinsburg_school_property_taxes(x) = x * (26.5/1000)
 wilkinsburg_total_property_taxes(x) = wilkinsburg_borough_property_taxes(x) + wilkinsburg_school_property_taxes(x)
-
-pittsburgh_city_real_estate_tax(x) = x * (8.06/1000)
+# https://pittsburghpa.gov/finance/tax-descriptions#476
+pittsburgh_city_real_estate_tax_parks(x) = x * (0.50/1000)
+# https://pittsburghpa.gov/finance/tax-descriptions#29
+pittsburgh_city_real_estate_tax_ret(x) = x * (8.06/1000)
+pittsburgh_city_real_estate_tax(x) = pittsburgh_city_real_estate_tax_ret(x) + pittsburgh_city_real_estate_tax_parks(x)
 pittsburgh_school_property_taxes(x) = x * (9.95/1000)
 pittsburgh_total_property_taxes(x) = pittsburgh_city_real_estate_tax(x) + pittsburgh_school_property_taxes(x)
 
@@ -71,7 +74,7 @@ set style line 8 lt 1 lc rgb '#b10027' #
 
 # palette
 set palette defined(\
-40 '#5548c1',\
+50 '#5548c1',\
 100 '#ffffff',\
 310.0 '#b10027')
 
