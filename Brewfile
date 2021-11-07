@@ -4,5 +4,6 @@ brew 'curl'
 brew 'gnuplot'
 brew 'pngcrush'
 brew 'webp'
+brew 'svgo'
 
 cask 'inkscape'

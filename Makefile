@@ -20,6 +20,7 @@ GNUPLOT ?= gnuplot
 CURL ?= curl
 INKSCAPE ?= flatpak run org.inkscape.Inkscape
 PNGCRUSH ?= pngcrush
+SVGO ?= svgo
 CWEBP ?= cwebp
 
 all: $(TARGETS) ## Create all artifacts
@@ -30,6 +31,7 @@ help:
 
 %.svg: %.gnuplot
 	$(GNUPLOT) $< > $@
+	$(SVGO) --multipass $@
 
 %.png: %.svg
 	$(INKSCAPE) --export-filename=$@ --export-overwrite --export-type=png $<
