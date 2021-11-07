@@ -53,6 +53,9 @@ Renters can expect to see a net tax increase in the event of a full merger or sc
 unless property owners lower rent voluntarily commensurate with their
 lower property tax burden or through an act of borough or city government.
 
+The City of Pittsburgh parks tax of 0.5 mills is included in real estate tax
+calculations as of 7 November 2021.
+
 ### A quick refresher on statistics
 
 The graphs bear some abbreviations of statistical terminology to help explain _where_ in the dataset some real numbers are.
