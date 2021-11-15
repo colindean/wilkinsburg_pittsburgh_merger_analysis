@@ -1,0 +1,118 @@
+@startuml
+' Best renderer online: https://planttext.com/
+' Or use plantuml locally
+
+!theme amiga
+
+
+title Will My Taxes Increase If Wilkinsburg Is Annexed?
+header v2021.11.14.0
+footer
+Tax calculations on this graphic are an estimate.
+Contact a tax professional to understand your situation.
+**wilkinsburgfuture.org**
+end footer
+
+note
+**TL;DR** if 3x your annual municipal income tax is greater than
+approximately half of your total property tax, you will pay
+**more** tax as Pittsburgh resident than in Wilkinsburg.
+All former Wilkinsburg residents would see smaller paychecks,
+but only some will break even via lower property tax bills.
+
+
+Not a fan of math? 
+[[https://wilkinsburgfuture.org/calculator]]
+
+end note
+
+start
+
+if (Are you a Wilkinsburg resident?) then (**YES**)
+
+else (**NO**)
+  :This workflow is not for you.;
+  stop
+endif
+
+if (Do you rent or own your residence?) then (**RENT**)
+  :**Yes, your overall taxes will increase.**
+Your municipal earned income tax will
+//increase// by 3x or 300%.
+
+You may not benefit from the decreased
+property taxes unless your landlord
+lowers your rent. Pittsburgh charges
+landlords a business tax, so your
+landlord may //increase// rent to offset
+this tax that Wilkinsburg does not charge.;
+  stop
+  note left: You're done!
+
+else (**OWN**)
+  :
+  **Maybe...**
+  Continue reading!
+  ;
+endif
+
+:
+Get your most recent //real estate tax// and //school tax// bills.
+You may need to look at your mortgage payment information
+if your taxes are escrowed through your mortgage company.
+Add the full amount together.
+This is your **Wilkinsburg property tax total**.
+
+Get your paystub and see how much you are paid
+per normal pay period. Multiply that by the number
+of pay period per year (e.g. 12, 24, or 26).
+This is your **yearly pre-tax income**.
+;
+
+:
+Grab a calculator and something to write with and on
+and write down these calculations.
+
+Multiply the **Wilkinsburg property tax total** by ""0.49"".
+This is your **Pittsburgh property tax**.
+
+Multiply the **yearly pre-tax income** by ""0.01"".
+This is your **Wilkinsburg income tax**.
+
+Multiply the **yearly pre-tax income** by ""0.03"".
+This is your **Pittsburgh income tax**.
+;
+
+:
+Add the **Wilkinsburg** property and income taxes.
+
+Add the **Pittsburgh** property and income taxes.
+;
+
+
+if (Which number is larger?) then (**Pittsburgh**)
+  :Your overall taxes will **increase**
+because of the annexation.;
+else (**Wilkinsburg**)
+  :Your overall taxes will **decrease**
+because of the annexation.;
+endif
+
+:
+All Wilkinsburg residents will see smaller paychecks
+because Pittsburgh's earned income tax is three times
+higher than that of Wilkinsburg.
+
+Only Wilkinsburg residents whose reduction in property
+taxes offsets their increase income tax //may// benefit
+from the annexation, at least when it comes to these taxes.
+;
+
+stop
+
+note
+Not sure if you did it right? Try
+[[https://wilkinsburgfuture.org/calculator]]
+end note
+
+@enduml
