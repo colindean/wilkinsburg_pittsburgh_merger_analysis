@@ -288,6 +288,12 @@ Some rights reserved. See LICENSE.md for details.
 
 <ul>
   <li><p>
+    <time datetime="2021-11-18">November 18</time>: The calculator now includes the City of Pittsburgh
+    <a href="https://pittsburghpa.gov/finance/tax-faqs#36">library tax</a> of 0.25 mills in
+    real estate tax calculations. Wilkinsburg does not have a similar tax.
+  </p></li>
+
+  <li><p>
     <time datetime="2021-11-07">November 7</time>: The calculator now includes the City of Pittsburgh
     <a href="https://pittsburghpa.gov/finance/tax-descriptions#476">parks tax</a> of 0.5 mills in
     real estate tax calculations. Wilkinsburg does not have a similar tax.
@@ -331,7 +337,9 @@ Some rights reserved. See LICENSE.md for details.
     function p_ret_realestate(property) { return property * (8.06/1000); }
     // https://pittsburghpa.gov/finance/tax-descriptions#476
     function p_ret_parktax(property) { return property * (0.50/1000); }
-    function p_ret(property) { return p_ret_realestate(property) + p_ret_parktax(property); }
+    // https://pittsburghpa.gov/finance/tax-faqs#36
+    function p_ret_librarytax(property) { return property * (0.25/1000); }
+    function p_ret(property) { return p_ret_realestate(property) + p_ret_parktax(property) + p_ret_librarytax(property); }
     function p_sdt(property) { return property * (9.95/1000); }
 
     function calculate(){
