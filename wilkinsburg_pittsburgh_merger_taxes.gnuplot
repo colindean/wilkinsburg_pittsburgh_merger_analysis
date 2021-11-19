@@ -28,9 +28,11 @@ wilkinsburg_school_property_taxes(x) = x * (26.5/1000)
 wilkinsburg_total_property_taxes(x) = wilkinsburg_borough_property_taxes(x) + wilkinsburg_school_property_taxes(x)
 # https://pittsburghpa.gov/finance/tax-descriptions#476
 pittsburgh_city_real_estate_tax_parks(x) = x * (0.50/1000)
+# https://pittsburghpa.gov/finance/tax-descriptions#36
+pittsburgh_city_real_estate_tax_library(x) = x * (0.25/1000)
 # https://pittsburghpa.gov/finance/tax-descriptions#29
 pittsburgh_city_real_estate_tax_ret(x) = x * (8.06/1000)
-pittsburgh_city_real_estate_tax(x) = pittsburgh_city_real_estate_tax_ret(x) + pittsburgh_city_real_estate_tax_parks(x)
+pittsburgh_city_real_estate_tax(x) = pittsburgh_city_real_estate_tax_ret(x) + pittsburgh_city_real_estate_tax_parks(x) + pittsburgh_city_real_estate_tax_library(x)
 pittsburgh_school_property_taxes(x) = x * (9.95/1000)
 pittsburgh_total_property_taxes(x) = pittsburgh_city_real_estate_tax(x) + pittsburgh_school_property_taxes(x)
 
