@@ -1,0 +1,68 @@
+@startuml
+' Best renderer online: https://planttext.com/
+' Or use plantuml locally
+
+!theme amiga
+
+title Will My Taxes Increase If Wilkinsburg Is Annexed?
+header v2021.11.20.0
+footer
+
+Any tax calculations on this graphic are an estimate.
+Contact a tax professional to understand your situation.
+**wilkinsburgfuture.org**
+end footer
+
+note
+**TL;DR Summary:** As a result of annexation...
+
+//All// Wilkinsburg residents would see smaller paychecks
+because Pittsburgh's total earned income tax is three times
+higher than that of Wilkinsburg.
+
+Only Wilkinsburg residents whose reduction in property
+taxes offsets their increase income tax //may// benefit
+from the annexation, at least when it comes to these
+two categories of taxes.
+end note
+
+start
+
+if (Are you a Wilkinsburg resident?) then (**YES**)
+
+else (**NO**)
+  :This workflow is not for you.;
+  stop
+endif
+
+if (Do you rent or own your residence?) then (**RENT**)
+  :**Yes, your overall taxes will increase.**
+Your municipal earned income tax will
+//increase// by 3x or 300%.
+
+You may not benefit from the decreased
+property taxes unless your landlord
+lowers your rent. Pittsburgh charges
+landlords a payroll tax, so your
+landlord may //increase// rent to offset
+this tax that Wilkinsburg does not charge.;
+
+else (**OWN**)
+  :**Your total tax paid //may// increase...**
+
+To estimate, if 3x your annual municipal
+income tax is greater than approximately
+45% of your total property tax, you will pay
+**more** tax as Pittsburgh resident than
+in Wilkinsburg.
+  ;
+endif
+
+stop
+
+note
+  Calculate it at
+  [[https://wilkinsburgfuture.org/calculator]]
+end note
+
+@enduml
