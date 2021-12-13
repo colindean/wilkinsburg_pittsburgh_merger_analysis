@@ -61,7 +61,7 @@ Some rights reserved. See LICENSE.md for details.
 
 <form id="form">
   <div>
-    <label for="income">Your Yearly <dfn title="Your total earned income, including wages, for yourself and a spouse, if you have one">Household Income</dfn>, no commas</label>
+    <label for="income">Your Yearly <dfn title="Your total earned income, including wages, for yourself and a spouse, if you have one">Household Earned Income</dfn>, no commas</label>
     <input name="income" id="income" placeholder="33000" type="number" min="0" step="0.01"/>
     <ul id="wage-helpers">
       <li>quick input full time at</li>
@@ -73,11 +73,23 @@ Some rights reserved. See LICENSE.md for details.
         <input name="hourly" id="hourly" type="number" min="0" step="0.01"/>
       </li>
     </ul>
+    <p class="instructions">
+      Only consider
+      <a href="https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/earned-income-and-earned-income-tax-credit-eitc-tables">earned income</a>,
+      which excludes 
+      "Pay you got for work when you were an inmate in a penal institution,
+      Interest and dividends,
+      Pensions or annuities,
+      Social Security,
+      Unemployment benefits,
+      Alimony, and
+      Child support."
+    </p>
   </div>
   <div>
     <label for="property">Your House's Assessed Value (or enter <code>0</code> if you rent)</label>
     <input name="property" id="property" placeholder="36700" required type="number" min="0"/>
-    <p>
+    <p class="instructions">
       Don't know your house's assessed value?
       <a href="http://www2.alleghenycounty.us/RealEstate/Default.aspx">Look it up</a>.
       You'll want the "Total value" under the current year's "County Assessed Value".
