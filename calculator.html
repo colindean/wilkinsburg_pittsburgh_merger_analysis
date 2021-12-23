@@ -292,6 +292,12 @@ Some rights reserved. See LICENSE.md for details.
 
 <ul>
   <li><p>
+    <time datetime="2021-12-23">December 23</time>: Pittsburgh Public Schools raised the school property tax to 10.25 mills from 9.95 mills, as reported by 
+    <a href="https://www.post-gazette.com/news/education/2021/12/22/Pittsburgh-Public-Schools-board-tax-increase-vote-PPS-district-2022-budget/stories/202112210105">Post-Gazette</a>
+    and as <a href="https://go.boarddocs.com/pa/pghboe/Board.nsf/files/C9KMVU5CE971/$file/Real%20Property%20Tax%20Levies%20(2022)%20(10.25%20mills).pdf">written in the resolution</a>.
+    The calculator has been adjusted accordingly.
+  </p></li>
+  <li><p>
     <time datetime="2021-12-13">December 13</time>: Wilkinsburg CDC launched 
     <a href="https://wilkinsburgmerger.org/calculator/">its own calculator</a>,
     the <a 
@@ -370,7 +376,7 @@ Some rights reserved. See LICENSE.md for details.
     // https://pittsburghpa.gov/finance/tax-faqs#36
     function p_ret_librarytax(property) { return property * (0.25/1000); }
     function p_ret(property) { return p_ret_realestate(property) + p_ret_parktax(property) + p_ret_librarytax(property); }
-    function p_sdt(property) { return property * (9.95/1000); }
+    function p_sdt(property) { return property * (10.25/1000); }
 
     function calculate(){
         let income = parseFloat(document.getElementById('income').value);
