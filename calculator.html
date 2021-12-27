@@ -85,7 +85,7 @@ Some rights reserved. See LICENSE.md for details.
     <p class="instructions">
       Only consider
       <a href="https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/earned-income-and-earned-income-tax-credit-eitc-tables">earned income</a>,
-      which excludes 
+      which excludes
       "Pay you got for work when you were an inmate in a penal institution,
       Interest and dividends,
       Pensions or annuities,
@@ -121,40 +121,46 @@ Some rights reserved. See LICENSE.md for details.
   <tbody>
     <tr>
       <td>Earned Income Tax</td>
-      <td id="w-eit"></td>
-      <td id="p-eit"></td>
-      <td id="p-eiti"></td>
-      <td id="sch-eit"></td>
-      <td id="sch-eiti"></td>
+      <td class="w-eit"></td>
+      <td class="p-eit"></td>
+      <td class="p-eiti"></td>
+      <td class="sch-eit"></td>
+      <td class="sch-eiti"></td>
     </tr>
     <tr>
       <td>Municipal Real Estate Property Tax</td>
-      <td id="w-ret"></td>
-      <td id="p-ret"></td>
-      <td id="p-reti"></td>
-      <td id="sch-ret"></td>
-      <td id="sch-reti"></td>
+      <td class="w-ret"></td>
+      <td class="p-ret"></td>
+      <td class="p-reti"></td>
+      <td class="sch-ret"></td>
+      <td class="sch-reti"></td>
     </tr>
     <tr>
       <td>School Property Tax</td>
-      <td id="w-sdt"></td>
-      <td id="p-sdt"></td>
-      <td id="p-sdti"></td>
-      <td id="sch-sdt"></td>
-      <td id="sch-sdti"></td>
+      <td class="w-sdt"></td>
+      <td class="p-sdt"></td>
+      <td class="p-sdti"></td>
+      <td class="sch-sdt"></td>
+      <td class="sch-sdti"></td>
+    </tr>
+    <tr>
+      <td>Allegheny County Real Estate Tax</td>
+      <td class="c-ret"></td>
+      <td class="c-ret"></td>
+      <td class="c-reti"></td>
+      <td class="c-ret"></td>
+      <td class="c-reti"></td>
     </tr>
     <tr class="highlight">
       <td>Total Yearly Tax</td>
-      <td id="w-tt"></td>
-      <td id="p-tt"></td>
-      <td id="p-tti"></td>
-      <td id="sch-tt"></td>
-      <td id="sch-tti"></td>
+      <td class="w-tt"></td>
+      <td class="p-tt"></td>
+      <td class="p-tti"></td>
+      <td class="sch-tt"></td>
+      <td class="sch-tti"></td>
     </tr>
   </tbody>
 </table>
-
-<p>This calculator does not take into account Allegheny County real estate tax. That would not change as a result of the annexation.</p>
 
 <h2>Scenario Descriptions</h2>
 
@@ -292,17 +298,21 @@ Some rights reserved. See LICENSE.md for details.
 
 <ul>
   <li><p>
-    <time datetime="2021-12-23">December 23</time>: Pittsburgh Public Schools raised the school property tax to 10.25 mills from 9.95 mills, as reported by 
+    <time datetime="2021-12-27">December 27</time>: By popular request, the calculator now features a line for Allegheny County Real Estate Tax of 4.73 mills and the total
+    now includes that tax, as well.
+  </p></li>
+  <li><p>
+    <time datetime="2021-12-23">December 23</time>: Pittsburgh Public Schools raised the school property tax to 10.25 mills from 9.95 mills, as reported by
     <a href="https://www.post-gazette.com/news/education/2021/12/22/Pittsburgh-Public-Schools-board-tax-increase-vote-PPS-district-2022-budget/stories/202112210105">Post-Gazette</a>
     and as <a href="https://go.boarddocs.com/pa/pghboe/Board.nsf/files/C9KMVU5CE971/$file/Real%20Property%20Tax%20Levies%20(2022)%20(10.25%20mills).pdf">written in the resolution</a>.
     The calculator has been adjusted accordingly.
   </p></li>
   <li><p>
-    <time datetime="2021-12-13">December 13</time>: Wilkinsburg CDC launched 
+    <time datetime="2021-12-13">December 13</time>: Wilkinsburg CDC launched
     <a href="https://wilkinsburgmerger.org/calculator/">its own calculator</a>,
-    the <a 
+    the <a
            href="https://wilkinsburgmerger.org/wp-content/themes/burg2burgh/js/taxCalculator.js">math of which</a>
-    I've verified as accurate as of 2021-12-13 15:41 with 
+    I've verified as accurate as of 2021-12-13 15:41 with
     <abbr title="949c65525095634b4ae3cd23d7ff820c532d86b43e343cdb309a023028a92b7f">sha256:949c6552</abbr>.
     Our displayed numbers disagree by a dollar or so, as I've chosen to round to the nearest
     dollar for display purposes since I find that easier to do headmath when the cents don't matter much.
@@ -310,7 +320,7 @@ Some rights reserved. See LICENSE.md for details.
     as this calculator does.
   </p></li>
   <li><p>
-    <time datetime="2021-12-11">December 11</time>: I'm aware that the Pittsburgh SD may raise its taxes, according to 
+    <time datetime="2021-12-11">December 11</time>: I'm aware that the Pittsburgh SD may raise its taxes, according to
     <a href="https://www.post-gazette.com/news/education/2021/12/09/Pittsburgh-Public-Schools-board-consider-property-tax-increase/stories/202112080166"
        >Pittsburgh Public Schools board may consider property tax increase</a>, published in the Post-Gazette.
     I will adjust the calculator upon any rate change that I hear about.
@@ -354,6 +364,9 @@ Some rights reserved. See LICENSE.md for details.
   </p></li>
 
 <script>
+    // https://alleghenycountytreasurer.us/real-estate-tax/local-and-school-district-tax-millage/
+    function county_ret(property) { return property * (4.73/1000); }
+
     // https://www.wilkinsburgpa.gov/departments/finance-department/tax-questions/
     function w_sch_eit(income) { return income * 0.005; }
     function w_city_eit(income) { return income * 0.005; }
@@ -388,15 +401,19 @@ Some rights reserved. See LICENSE.md for details.
 
         let results = new Map();
 
+        results.set('c-ret', county_ret(property));
+        // static, no change... because this won't change!
+        results.set('c-reti', 0.0);
+
         // Present Wilkinsburg values
-        let wilk = w_eit(income) + w_ret(property) + w_sdt(property);
+        let wilk = w_eit(income) + w_ret(property) + w_sdt(property) + county_ret(property);
         results.set('w-eit', w_eit(income));
         results.set('w-ret', w_ret(property));
         results.set('w-sdt', w_sdt(property));
         results.set('w-tt', wilk);
 
         // Full merger
-        let pgh = p_eit(income) + p_ret(property) + p_sdt(property);
+        let pgh = p_eit(income) + p_ret(property) + p_sdt(property) + county_ret(property);
         results.set('p-eit', p_eit(income));
         results.set('p-eiti', results.get('p-eit') - w_eit(income));
         results.set('p-ret', p_ret(property));
@@ -407,7 +424,7 @@ Some rights reserved. See LICENSE.md for details.
         results.set('p-tti', pgh - wilk);
 
         // School district merger only
-        let wilk_pghsd = w_city_eit(income) + p_sch_eit(income) + w_ret(property) + p_sdt(property);
+        let wilk_pghsd = w_city_eit(income) + p_sch_eit(income) + w_ret(property) + p_sdt(property) + county_ret(property);
         results.set('sch-eit', w_city_eit(income) + p_sch_eit(income));
         results.set('sch-eiti', results.get('sch-eit') - w_eit(income));
         results.set('sch-ret', w_ret(property));
@@ -423,18 +440,20 @@ Some rights reserved. See LICENSE.md for details.
     function display(results) {
         results.forEach(function(value, key) {
           console.log(key + ' = ' + value);
-          let elem = document.getElementById(key);
           let dollars = Math.abs(Math.round(value,2)).formatMoney();
-          elem.innerText = dollars;
-          if (key.endsWith('i')) {
-              Array.from(['decrease','increase']).forEach(function(cl){
-                  elem.classList.remove(cl);
-              });
-              if (value != 0) {
-                let c = value < 0 ? 'decrease' : 'increase';
-                elem.classList.add(c);
-              }
-          }
+          let elems = Array.from(document.getElementsByClassName(key));
+          elems.forEach(function(elem) {
+            elem.innerText = dollars;
+            if (key.endsWith('i')) {
+                Array.from(['decrease','increase']).forEach(function(cl){
+                    elem.classList.remove(cl);
+                });
+                if (value != 0) {
+                  let c = value < 0 ? 'decrease' : 'increase';
+                  elem.classList.add(c);
+                }
+            }
+          });
         });
     }
 
