@@ -4,8 +4,8 @@
 
 !theme amiga
 
-title Will My Taxes Increase If Wilkinsburg Is Annexed?
-header v2021.11.20.0
+title Will My Taxes Increase If\nPittsburgh Annexes Wilkinsburg?
+header v2022.03.19.0
 footer
 
 Any tax calculations on this graphic are an estimate.
@@ -20,8 +20,8 @@ note
 because Pittsburgh's total earned income tax is three times
 higher than that of Wilkinsburg.
 
-Only Wilkinsburg residents whose reduction in property
-taxes offsets their increase income tax //may// benefit
+Only Wilkinsburg residents whose reduction in property taxes
+offsets their increase income tax //may// benefit financially
 from the annexation, at least when it comes to these
 two categories of taxes.
 end note
@@ -35,7 +35,8 @@ else (**NO**)
   stop
 endif
 
-if (Do you rent or own your residence?) then (**RENT**)
+if (Do you **rent** or **own** your residence?) then (**RENT**)
+  if (Do you have earned income in the form of wages?) then (**WAGES**)
   :**Yes, your overall taxes will increase.**
 Your municipal earned income tax will
 //increase// by 3x or 300%.
@@ -46,16 +47,27 @@ lowers your rent. Pittsburgh charges
 landlords a payroll tax, so your
 landlord may //increase// rent to offset
 this tax that Wilkinsburg does not charge.;
+  else (**NO WAGES**)
+    :**Your total tax paid will not increase...**
+but higher business taxes in Pittsburgh may
+increase your rent. It is extremely unlikely
+that your rent would decrease as a direct result
+of annexation. Only Pittsburgh City Council
+could require landlords to reduce rent.;
+  endif
 
 else (**OWN**)
   :**Your total tax paid //may// increase...**
 
 To estimate, if 3x your annual municipal
 income tax is greater than approximately
-45% of your total property tax, you will pay
-**more** tax as Pittsburgh resident than
-in Wilkinsburg.
-  ;
+45% of your total property tax, you will
+pay **more** tax as Pittsburgh resident
+than in Wilkinsburg. More precisely,
+multiply your assessment by 1.072.
+If your household's yearly wages exceed
+that amount, you may pay **more** tax
+as a Pittsburgh resident.;
 endif
 
 stop
