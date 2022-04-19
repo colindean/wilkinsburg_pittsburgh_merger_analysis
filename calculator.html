@@ -89,6 +89,20 @@ Some rights reserved. See LICENSE.md for details.
       #wage-helpers li.rate button::before {
         content: "$";
       }
+      
+      /*
+       * hide arrows from number inputs
+       */
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      /* Firefox */
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
     </style>
   </head>
 <body>
@@ -97,9 +111,9 @@ Some rights reserved. See LICENSE.md for details.
 <form id="form">
   <div>
     <label for="income">Your Yearly <dfn title="Your total earned income, including wages, for yourself and a spouse, if you have one">Household Earned Income</dfn>, no commas</label>
-    <input name="income" id="income" placeholder="33000" type="number" min="0" step="5000"/>
+    <input name="income" id="income" placeholder="33000" type="number" min="0" step="1"/>
     <label for="other">or use hourly rate</label>
-    <input name="hourly" id="hourly" type="number" min="0" step="0.50"/>
+    <input name="hourly" id="hourly" type="number" min="0" step="0.01"/>
     <ul id="wage-helpers">
       <li>quick input full time at</li>
       <li class="rate"><button>7.25</button></li>
@@ -126,7 +140,7 @@ Some rights reserved. See LICENSE.md for details.
   </div>
   <div>
     <label for="property">Your House's Assessed Value (or enter <code>0</code> if you rent)</label>
-    <input name="property" id="property" placeholder="36700" required type="number" min="0" step="5000"/>
+    <input name="property" id="property" placeholder="36700" required type="number" min="0" step="1"/>
     <details class="instructions">
       <summary>What is earned income?</summary>
       <p>
