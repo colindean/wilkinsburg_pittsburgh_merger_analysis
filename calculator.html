@@ -77,6 +77,12 @@ Some rights reserved. See LICENSE.md for details.
         padding: 0.1em;
         border: 1px solid black;
         border-radius: 0.1em;
+        animation: heartbeat 3s infinite;
+      }
+      @keyframes heartbeat {
+        0% { box-shadow: 0 0 1px 1px #fff; }
+        50% { box-shadow: 0 0 4px 4px #aaa; }
+        100% { box-shadow: 0 0 0px 0px #fff; } 
       }
       #calculate {
         font-size: 1.5em;
