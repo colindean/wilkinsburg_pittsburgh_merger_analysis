@@ -35,15 +35,40 @@ Some rights reserved. See LICENSE.md for details.
       }
       .instructions {
         font-style: italic;
-        color: darkgray;
-        border-left: 2px solid darkgray;
+        color: #222;
         padding-left: 0.5em;
+      }
+      .instructions p {
+        border-left: 2px solid darkgray;
       }
       .instructions a {
         color: gray;
+        text-decoration: underline;
       }
       form {
-        margin: 2em;
+        margin: 0.5em 0;
+        border: 1px solid black;
+        padding: 1em;
+        border-radius: 0.5em;
+      }
+      form div {
+        border: 1px solid gray;
+        margin: 0.5em 0;
+        padding: 0 0.5em;
+        border-radius: 0.5em;
+      }
+      form input {
+        border: 1px solid black;
+        border-radius: 0.5em;
+        display: block;
+        padding: 0.5em;
+      }
+      form summary {
+        cursor: pointer;
+        outline: none;
+      }
+      form summary:focus {
+        border-color: black;
       }
       body {
         font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
@@ -52,6 +77,7 @@ Some rights reserved. See LICENSE.md for details.
       }
       #wage-helpers {
         display: inline-block;
+        padding-left: 0px;
       }
       #wage-helpers li {
         display: inline-block;
@@ -66,45 +92,49 @@ Some rights reserved. See LICENSE.md for details.
     </style>
   </head>
 <body>
-<h1>Calculate your tax difference if Wilkinsburg is annexed by Pittsburgh</h1>
+<h1>Calculate your tax difference if Pittsburgh annexes Wilkinsburg</h1>
 
 <form id="form">
   <div>
     <label for="income">Your Yearly <dfn title="Your total earned income, including wages, for yourself and a spouse, if you have one">Household Earned Income</dfn>, no commas</label>
-    <input name="income" id="income" placeholder="33000" type="number" min="0" step="0.01"/>
+    <input name="income" id="income" placeholder="33000" type="number" min="0" step="5000"/>
+    <label for="other">or use hourly rate</label>
+    <input name="hourly" id="hourly" type="number" min="0" step="0.50"/>
     <ul id="wage-helpers">
       <li>quick input full time at</li>
       <li class="rate"><button>7.25</button></li>
       <li class="rate"><button>10</button></li>
       <li class="rate"><button>15</button></li>
-      <li>
-        <label for="other">or use hourly</label>
-        <input name="hourly" id="hourly" type="number" min="0" step="0.01"/>
-      </li>
     </ul>
-    <p class="instructions">
-      Only consider taxable income and wages you get from working for someone else, yourself or from a business you own.
-      Exclude
-      "Pay you got for work when you were an inmate in a penal institution,
-      Interest and dividends,
-      Pensions or annuities,
-      Social Security,
-      Unemployment benefits,
-      Alimony, and
-      Child support."
-      You can use the number in <strong>Box 18 from your most recent IRS W-2</strong>.
-      See <a href="https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/earned-income-and-earned-income-tax-credit-eitc-tables"
-             >IRS earned income definition</a> for more information.
-    </p>
+    <details class="instructions">
+      <summary>What is earned income?</summary>
+      <p>
+        Only consider taxable income and wages you get from working for someone else, yourself or from a business you own.
+        Exclude
+        "Pay you got for work when you were an inmate in a penal institution,
+        Interest and dividends,
+        Pensions or annuities,
+        Social Security,
+        Unemployment benefits,
+        Alimony, and
+        Child support."
+        You can use the number in <strong>Box 18 from your most recent IRS W-2</strong>.
+        See <a href="https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/earned-income-and-earned-income-tax-credit-eitc-tables"
+               >IRS earned income definition</a> for more information.
+      </p>
+    </details>
   </div>
   <div>
     <label for="property">Your House's Assessed Value (or enter <code>0</code> if you rent)</label>
-    <input name="property" id="property" placeholder="36700" required type="number" min="0"/>
-    <p class="instructions">
-      Don't know your house's assessed value?
-      <a href="http://www2.alleghenycounty.us/RealEstate/Default.aspx">Look it up</a>.
-      You'll want the "Total value" under the current year's "County Assessed Value".
-    </p>
+    <input name="property" id="property" placeholder="36700" required type="number" min="0" step="5000"/>
+    <details class="instructions">
+      <summary>What is earned income?</summary>
+      <p>
+        Don't know your house's assessed value?
+        <a href="http://www2.alleghenycounty.us/RealEstate/Default.aspx">Look it up</a>.
+        You'll want the "Total value" under the current year's "County Assessed Value".
+      </p>
+    </details>
   </div>
   <button type="submit" name="calculate" id="calculate">Calculate</button>
 </form>
