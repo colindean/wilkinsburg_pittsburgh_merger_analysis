@@ -41,10 +41,10 @@ The coloration of the graph is kind of like heat: blue means taxes go down, red 
 
 The graphs are quite simple math but I've chosen the ranges based on some heuristics:
 
-* The range for property value is based on June 2021 county assessment data from WPRDC for the whole municipality, but residences only.
-  * The mean assessed value is around $48,000 in the standard deviation is about $50,000. I chose zero as the starting point for the benefit of renters and a little more than three standard deviations above the mean, approximately $200,000, as the max for that axis.
+* The range for property value is based on March 2022 county assessment data from WPRDC for the whole municipality, but residences only.
+  * The mean assessed value is around $48,000 in the standard deviation is about $52,500. I chose zero as the starting point for the benefit of renters and a little more than three standard deviations above the mean, approximately $220,000, as the max for that axis.
 * For earned income taxes, I chose $15,000 as approximately full-time minimum wage and $300,000 as a two-income, highly-skilled professional household. I don't know where I can get better data on incomes so if you have a suggestion I'm all ears.
-  * Noted on the graphs are the median income and 65% mark according to the US Census Bureau.
+  * Noted on the graphs are the median income and 62% mark according to the US Census Bureau.
 
 It's important to note that _renters_ aren't well represented on the graphs
 because their property taxes are zero: they do not pay property tax directly.
