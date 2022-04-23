@@ -135,11 +135,12 @@ set label sprintf("65%% of households are under $%'.0fk (%0.0f)", ei_65pct/1000,
 
 ## PROPERTY TAX LINES
 
+# output of `make stats-all-liveable`
 pv_1q = 17200.0
-pv_med = 33000.0
-pv_3q = 62400.0
-pv_mean = 48402.4
-pv_stddev = 50137.1
+pv_med = 33200.0
+pv_3q = 62800.0
+pv_mean = 49446.5
+pv_stddev = 52509.0
 
 nth_pv_stddev(x) = pv_mean + (pv_stddev * x)
 
