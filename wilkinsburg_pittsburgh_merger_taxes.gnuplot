@@ -96,7 +96,7 @@ ei_high = 300000
 ei_tics = ei_low/3
 
 pv_low = 0
-pv_high = 200000
+pv_high = 220000
 pv_tics = 20000
 
 set decimal locale
@@ -125,13 +125,13 @@ set view map
 ## INCOME LINES
 # https://www.census.gov/quickfacts/fact/table/wilkinsburgboroughpennsylvania/PST045219
 # https://censusreporter.org/profiles/16000US4285188-wilkinsburg-pa/
-ei_med = 36743.0
-ei_65pct = 50000.0
-ei_stat_year = 2019
+ei_med = 37649.0
+ei_62pct = 50000.0
+ei_stat_year = 2020
 set arrow from ei_med,pv_low to ei_med,pv_high nohead front
-set label sprintf("Median Household Income $%'.1fk (%0.0f)", ei_med/1000, ei_stat_year) at ei_med,-23000
-set arrow from ei_65pct,pv_low to ei_65pct,pv_high nohead front
-set label sprintf("65%% of households are under $%'.0fk (%0.0f)", ei_65pct/1000, ei_stat_year) at ei_65pct,-30000
+set label sprintf("Median Household Income $%'.1fk (%0.0f)", ei_med/1000, ei_stat_year) at ei_med,-28500
+set arrow from ei_62pct,pv_low to ei_62pct,pv_high nohead front
+set label sprintf("62%% of households are under $%'.0fk (%0.0f)", ei_62pct/1000, ei_stat_year) at ei_62pct,-33000
 
 ## PROPERTY TAX LINES
 
@@ -147,7 +147,7 @@ nth_pv_stddev(x) = pv_mean + (pv_stddev * x)
 # first quartile
 set arrow from ei_low,pv_1q to ei_high,pv_1q nohead front
 set label sprintf("1Q $%'0.1fk", pv_1q / 1000) at -3000,(pv_1q-4000) # collides with ytic
-set label "(Renters)" at -11000,0
+set label "(Renters)" at -16000,0
 # median
 set arrow from ei_low,pv_med to ei_high,pv_med nohead front
 set label sprintf("Median $%'0.1fk", pv_med / 1000) at -10000,pv_med
@@ -159,17 +159,17 @@ set arrow from ei_low,pv_3q to ei_high,pv_3q nohead front
 set label sprintf("3Q $%'0.1fk", pv_3q / 1000) at -3000,(pv_3q+4000) # collides with ytic
 # first stddev
 set arrow from ei_low,nth_pv_stddev(1) to ei_high,nth_pv_stddev(1) nohead front
-set label sprintf("1σ $%'0.1fk", nth_pv_stddev(1)/1000) at -2000,(nth_pv_stddev(1)-4000) # collides with ytic
+set label sprintf("1σ $%'0.1fk", nth_pv_stddev(1)/1000) at -4000,(nth_pv_stddev(1)+2000) # collides with ytic
 set arrow from ei_low,nth_pv_stddev(2) to ei_high,nth_pv_stddev(2) nohead front
 set label sprintf("2σ $%'0.1fk", nth_pv_stddev(2)/1000) at -4000,(nth_pv_stddev(2)-2000) # collides with ytic
 set arrow from ei_low,nth_pv_stddev(3) to ei_high,nth_pv_stddev(3) nohead front
-set label sprintf("3σ $%'0.1fk", nth_pv_stddev(3)/1000) at -4000,(nth_pv_stddev(3)-6000)
+set label sprintf("3σ $%'0.1fk", nth_pv_stddev(3)/1000) at -4000,(nth_pv_stddev(3)-1000)
 
-set label "Data sources: U.S. Census Bureau QuickFacts, Allegheny County via Western PA Regional Data Center" at -15000,-40000
+set label "Data sources: U.S. Census Bureau, Allegheny County via Western PA Regional Data Center" at -15000,-40000
 set label "Assessment statistics include only parcels that are residential with buildings that are not condemned." at -15000,-46000
 
-splot full_pct_change(x,y), \
-      '++' using (sprintf("%.2f", full_pct_change(x,y))) with labels
+splot full_pct_change(x,y)#, \
+      #'++' using (sprintf("%.2f", full_pct_change(x,y))) with labels
 
 ### Percent change, SD MERGER
 
@@ -180,8 +180,8 @@ set palette defined(\
 100.0 '#ffffff',\
 260.0 '#b10027')
 
-splot sd_merger_only_pct_change(x,y), \
-      '++' using (sprintf("%.2f", sd_merger_only_pct_change(x,y))) with labels
+splot sd_merger_only_pct_change(x,y)#, \
+      #'++' using (sprintf("%.2f", sd_merger_only_pct_change(x,y))) with labels
 
 ### Raw Dollar Change, FULL MERGER
 
@@ -195,8 +195,8 @@ set palette defined(\
 0 '#ffffff',\
 6000.0 '#b10027')
 
-splot full_raw_change(x,y), \
-      '++' using (sprintf("%.2f", full_raw_change(x,y))) with labels
+splot full_raw_change(x,y)#, \
+      #'++' using (sprintf("%.2f", full_raw_change(x,y))) with labels
 
 ### RAW, school only
 
@@ -206,7 +206,7 @@ set palette defined(\
 0.0 '#ffffff',\
 4560.0 '#b10027')
 
-splot sd_merger_only_raw_change(x,y), \
-      '++' using (sprintf("%.2f", sd_merger_only_raw_change(x,y))) with labels
+splot sd_merger_only_raw_change(x,y)#, \
+      #'++' using (sprintf("%.2f", sd_merger_only_raw_change(x,y))) with labels
 
 unset multiplot
