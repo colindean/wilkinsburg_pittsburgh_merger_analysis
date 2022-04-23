@@ -162,7 +162,7 @@ Some rights reserved. See LICENSE.md for details.
   </div>
   <div>
     <label for="property">Your House's Assessed Value (or enter <code>0</code> if you rent)</label>
-    <input name="property" id="property" placeholder="33200" required type="number" min="0" step="1"/>
+    <input name="property" id="property" placeholder="33200" type="number" min="0" step="1"/>
     <details class="instructions">
       <summary>How can I determine my assessed value?</summary>
       <p>
@@ -475,8 +475,7 @@ Some rights reserved. See LICENSE.md for details.
 
 <ul>
   <li><p>
-      <time datetime="2022-04-23">April 23</time>: The mean assessment and median household income have been adjusted to align with the most recent data for each: March 2022 and 2020 ACS, respectively.</p>
-    <p>This new data actually demonstrates an <em>increase</em> in the gravity of the tax increase on a Wilkinsburg homeowner at the medians: a 36% increase in the increase, from approximately $30 to approximately $41.</p>
+      <time datetime="2022-04-23">April 23</time>: The mean assessment and median household income have been adjusted to align with the most recent data for each: March 2022 and 2020 ACS, respectively. This new data actually demonstrates an <em>increase</em> in the gravity of the tax increase on a Wilkinsburg homeowner at the medians: a 36% increase in the increase, from approximately $30 to approximately $41. Also, the calculator now uses the placeholder values that are the medians for each if no data is entered.</p>
   </li>
   <li><p>
     <time datetime="2022-04-18">April 18</time>: The calculator got a light visual update. Notably, it shows
@@ -592,12 +591,23 @@ Some rights reserved. See LICENSE.md for details.
     function p_sdt(property) { return property * (10.25/1000); }
 
     function calculate(){
-        let income = parseFloat(document.getElementById('income').value);
-        if (!income) {
-          income = parseFloat(document.getElementById('hourly').value) * 40 * 52;
-          document.getElementById('income').placeholder = income;
+        let income_el = document.getElementById('income');
+        let hourly_el = document.getElementById('hourly');
+        if (income_el.value == "" && hourly_el.value == "") {
+          console.log("No income provided, using placeholder, which is median");
+          income_el.value = income_el.placeholder;
         }
-        let property = parseFloat(document.getElementById('property').value);
+        let income = parseFloat(income_el.value);
+        if (!income) {
+          income = parseFloat(hourly_el.value) * 40 * 52;
+          income_el.placeholder = income;
+        }
+        let property_el = document.getElementById('property');
+        if (property_el.value == "") {
+          console.log("No property assessment provided, using placeholder, which is median");
+          property_el.value = property_el.placeholder;
+        }
+        let property = parseFloat(property_el.value);
 
         let results = new Map();
 
