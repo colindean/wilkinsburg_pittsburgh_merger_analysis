@@ -16,18 +16,22 @@ Share this site with a more speakable URL: [`j.mp/cd-wilk-pgh-merger`](https://b
 I believe that it's important to make informed decisions supported by careful analysis of data.
 It's on you to decide if the change in taxation is worth it for yourself, but consider also your neighbors.
 
-
 ## Tax Calculator
 
-The [Tax Calculator](calculator.html) shows what your household's income and property taxes would be in three scenarios:
+The [Tax Calculator](calculator.html) shows what your household's income and property taxes would be in two scenarios:
 
 1. a full annexation of Wilkinsburg and merger of the school districts
-2. an annexation of the borough that does not include merging the school districts
-3. a merger of the school districts but no annexation of the borough
+2. a merger of the school districts but no annexation of the borough
+
+_(A third scenario, a municipal only combination without school district, is not possible and was removed upon this realization.)_
 
 ## Tax Graphs
 
 The heat map charts the percentage change difference when accounting for earned income taxes and real estate and school district property tax going from Wilkinsburg to Pittsburgh under the proposed annexation.
+The white line is "no change" while blue means lower taxes and red means higher taxes.
+The scale on the right of each graph shows the gravity of the change indicated by the darkness of the color.
+
+:lightbulb: The top right graph, _Actual Dollar Change in Total Taxes, Full Merger_, is probably the most relevant to viewers.
 
 Three version of the graph are provided:
 
@@ -49,9 +53,12 @@ The graphs are quite simple math but I've chosen the ranges based on some heuris
 It's important to note that _renters_ aren't well represented on the graphs
 because their property taxes are zero: they do not pay property tax directly.
 The owner of the property does.
-Renters can expect to see a net tax increase in the event of a full merger or school district only merger
+Working renters — 65% of Wilkinsburg residents rent — can expect to see a net tax increase in the event of a full merger or school district only merger
 unless property owners lower rent voluntarily commensurate with their
 lower property tax burden or through an act of borough or city government.
+So, if this series of graphs had a height relative to the percentage of residents at the crosspoint,
+some 65% of the volume would be at the very bottom of the graph, lessened only
+by the percentage of renters who do not have earned income.
 
 The City of Pittsburgh parks tax of 0.5 mills is included in real estate tax
 calculations as of 7 November 2021.
@@ -75,8 +82,14 @@ What I would love to do is somehow scale this or carve out areas on the graph th
 The graphs do indicate the median household income with a vertical line but
 I don't have any other data about household incomes in order to find where on
 the map the majority of Wilkinsburg residents are. According to Census Bureau
-data, approximately 2/3 of Wilkinsburg households are under $50,000 per year.
+data, approximately 62% of Wilkinsburg households are under $50,000 per year.
 I have a line representing that figure on the graph.
+
+We do know from the USCB ACS that approximately 65% of Wilkinsburg residents
+are renters, but we don't know how many are working and thus have earned income.
+If we knew that breakdown, it would be easier to add a third dimension to the
+graphs reflecting the percentage of the population likely to be at a section of
+the graph at each coordinate.
 
 ### Help Wanted
 
