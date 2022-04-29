@@ -194,7 +194,9 @@ set cbtics 240
 
 set palette defined(\
 -4560.0 '#5548c1',\
+-1200.0 '#887bf4', \
 0 '#ffffff',\
+1200.0 '#f4335a',\
 6000.0 '#b10027')
 
 splot full_raw_change(x,y)#, \
@@ -205,7 +207,9 @@ splot full_raw_change(x,y)#, \
 set title "Actual Dollar Change in Total Taxes, School Merger Only"
 set palette defined(\
 -3360.0 '#5548c1',\
+-1200.0 '#887bf4', \
 0.0 '#ffffff',\
+1200.0 '#f4335a',\
 4560.0 '#b10027')
 
 splot sd_merger_only_raw_change(x,y)#, \
