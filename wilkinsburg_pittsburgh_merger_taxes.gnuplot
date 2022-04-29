@@ -57,6 +57,8 @@ sd_merger_only_taxes(income,property) = wilkinsburg_borough_income_taxes(income)
 sd_merger_only_pct_change(income,property) = (sd_merger_only_taxes(income,property) / wilkinsburg_taxes(income,property)) * 100
 sd_merger_only_raw_change(income,property) = (sd_merger_only_taxes(income,property) - wilkinsburg_taxes(income,property))
 
+# TODO: calculate this
+predict_property_assessment(income) = income / 1.072
 
 set tic scale 0
 
@@ -191,7 +193,7 @@ set format cb "$%'.0f"
 set cbtics 240
 
 set palette defined(\
--4080.0 '#5548c1',\
+-4560.0 '#5548c1',\
 0 '#ffffff',\
 6000.0 '#b10027')
 
@@ -202,7 +204,7 @@ splot full_raw_change(x,y)#, \
 
 set title "Actual Dollar Change in Total Taxes, School Merger Only"
 set palette defined(\
--3120.0 '#5548c1',\
+-3360.0 '#5548c1',\
 0.0 '#ffffff',\
 4560.0 '#b10027')
 
