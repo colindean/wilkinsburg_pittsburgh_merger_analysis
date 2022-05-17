@@ -5,6 +5,7 @@ Copyright 2021-2022 Colin Dean
 Some rights reserved. See LICENSE.md for details.
 -->
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
     <meta name="description" content="This calculator examines a few tax change scenarios should Pittsburgh annex Wilkinsburg. Find how how your taxes would change using this calculator.">
     <title>Wilkinsburg/Pittsburgh Annexation/Merger Tax Calculator</title>
@@ -235,6 +236,8 @@ Some rights reserved. See LICENSE.md for details.
     </tr>
   </tbody>
 </table>
+
+<button id="toggle-sch" title="Show the case if only the schools merge">&quot;School Merger Only&quot; Scenario <span class="sch-tt"></span> - Click to show in table</button>
 
 <h2>Quick Take</h2>
 
@@ -481,6 +484,9 @@ Some rights reserved. See LICENSE.md for details.
 
 <ul>
   <li><p>
+      <time datetime="2022-05-17">May 17</time>: The school-merger-only scenario is now hidden by default as it complicates the now mobile-friendly calculator.
+  </p></li>
+  <li><p>
       <time datetime="2022-04-23">April 23</time>: The mean assessment and median household income have been adjusted to align with the most recent data for each: March 2022 and 2020 ACS, respectively. This new data actually demonstrates an <em>increase</em> in the gravity of the tax increase on a Wilkinsburg homeowner at the medians: a 36% increase in the increase, from approximately $30 to approximately $41. Also, the calculator now uses the placeholder values that are the medians for each if no data is entered. Also, the help text directs the user to their latest Wilkinsburg tax return for greatest accuracy, as federal IRS 1040 Adjusted Gross Income is different from what Wilkinsburg includes in earned income. Beware of tax calculators that make this mistake!</p>
   </li>
   <li><p>
@@ -674,6 +680,22 @@ Some rights reserved. See LICENSE.md for details.
     }
 
     window.onload = function(){
+      Array.from(document.querySelectorAll('td:nth-child(4),td:nth-child(5)')).forEach(function(td){
+        td.style.display = "none";
+      });
+      let schToggle = document.getElementById('toggle-sch');
+      schToggle.onclick = function(e) {
+        e.preventDefault();
+        Array.from(document.querySelectorAll('td:nth-child(4),td:nth-child(5)')).forEach(function(td){
+          if (td.style.display === "none") {
+            td.style.display = "table-cell";
+          }
+          else{
+            td.style.display = "none";
+          }
+        });
+      };
+
       let form = document.getElementById('form');
       form.onsubmit = function(e) {
         e.preventDefault();
