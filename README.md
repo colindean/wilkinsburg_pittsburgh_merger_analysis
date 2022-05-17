@@ -53,7 +53,7 @@ The graphs are quite simple math but I've chosen the ranges based on some heuris
 It's important to note that _renters_ aren't well represented on the graphs
 because their property taxes are zero: they do not pay property tax directly.
 The owner of the property does.
-Working renters — 65% of Wilkinsburg residents rent — can expect to see a net tax increase in the event of a full merger or school district only merger
+Working renters — 65% of Wilkinsburg residents rent — can expect to see a net tax increase in the event of an annexation or school district only merger
 unless property owners lower rent voluntarily commensurate with their
 lower property tax burden or through an act of borough or city government.
 So, if this series of graphs had a height relative to the percentage of residents at the crosspoint,
@@ -75,6 +75,16 @@ The graphs bear some abbreviations of statistical terminology to help explain _w
 |x̄|[Mean](https://en.wikipedia.org/wiki/Mean)|The mathematical average, the sum of the amounts divided by the count of amounts|
 |σ / stddev|[Standard deviation](https://en.wikipedia.org/wiki/Standard_deviation)|A measure of variation from the mean; the smaller the stddev, the closer in general the amounts are to the mean|
 |1σ/2σ/3σ|First/second/third standard deviation|The number of standard deviations away from the mean, see also [68-95-99.7 rule](https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule).|
+
+## A note on "annexation" versus "merger"
+
+When first conceived in mid-2021, this site used "merger" because of the supporters' supposition that it was proposing an amicable merger.
+Not long after, I learned that the two municipalities do not qualify for the municipal merger laws but only for the municipal _annexation_ laws.
+These are two different processes.
+The proper term for the action sought by supporters of the combination of the municipalities _is_ **annexation**, and the use of merger anywhere in this process is disingenuous misinformation.
+The continued use of _merger_ in this site's name and in the names of files is purely to ensure that widely-shared links continue to work.
+It is no endorsement of the supporter's continued misuse of the term.
+Rather, it is an artifact of the imprecision of misinformation and a reminder that we all have a responsibility to investigate claims with proposed solutions that would affect our democratic power.
 
 ## Future Work
 
