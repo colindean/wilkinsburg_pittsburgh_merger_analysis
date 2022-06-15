@@ -680,13 +680,13 @@ Some rights reserved. See LICENSE.md for details.
     }
 
     window.onload = function(){
-      Array.from(document.querySelectorAll('td:nth-child(4),td:nth-child(5)')).forEach(function(td){
+      Array.from(document.querySelectorAll('td:nth-child(5),td:nth-child(6)')).forEach(function(td){
         td.style.display = "none";
       });
       let schToggle = document.getElementById('toggle-sch');
       schToggle.onclick = function(e) {
         e.preventDefault();
-        Array.from(document.querySelectorAll('td:nth-child(4),td:nth-child(5)')).forEach(function(td){
+        Array.from(document.querySelectorAll('td:nth-child(5),td:nth-child(6)')).forEach(function(td){
           if (td.style.display === "none") {
             td.style.display = "table-cell";
           }
