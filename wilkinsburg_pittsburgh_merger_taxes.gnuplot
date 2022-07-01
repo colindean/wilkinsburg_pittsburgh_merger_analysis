@@ -24,7 +24,7 @@ pittsburgh_income_taxes(x) = pittsburgh_city_earned_income_tax(x) + pittsburgh_s
 
 # https://alleghenycountytreasurer.us/real-estate-tax/local-and-school-district-tax-millage/
 wilkinsburg_borough_property_taxes(x) = x * (14.00/1000)
-wilkinsburg_school_property_taxes(x) = x * (26.5/1000)
+wilkinsburg_school_property_taxes(x) = x * (24.5/1000) # 26.5 2021-2022, 24.5 2022-2023
 wilkinsburg_total_property_taxes(x) = wilkinsburg_borough_property_taxes(x) + wilkinsburg_school_property_taxes(x)
 # https://pittsburghpa.gov/finance/tax-descriptions#476
 pittsburgh_city_real_estate_tax_parks(x) = x * (0.50/1000)
