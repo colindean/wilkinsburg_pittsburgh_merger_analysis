@@ -80,7 +80,7 @@ set palette defined(\
 310.0 '#b10027')
 
 set cblabel "Percent Change in Total Taxes"
-set format cb "%.1f%%"
+set format cb "%.0f%%"
 set cbtics 10
 set grid cbtics linewidth 3
 #set cbrange [:250]
@@ -193,7 +193,7 @@ set format cb "$%'.0f"
 set cbtics 240
 
 set palette defined(\
--4560.0 '#5548c1',\
+-4080.0 '#5548c1',\
 -1200.0 '#887bf4', \
 0 '#ffffff',\
 1200.0 '#f4335a',\
@@ -206,7 +206,7 @@ splot full_raw_change(x,y)#, \
 
 set title "Actual Dollar Change in Total Taxes, School Merger Only"
 set palette defined(\
--3360.0 '#5548c1',\
+-3120.0 '#5548c1',\
 -1200.0 '#887bf4', \
 0.0 '#ffffff',\
 1200.0 '#f4335a',\
