@@ -487,99 +487,109 @@ Some rights reserved. See LICENSE.md for details.
 <h2 id="changelog">Changelog</h2>
 
 <ul>
-  <li><p>
-    <time datetime="2022-06-30">June 30</time>: The calculator was updated to reflect the
-    2022-2023 Wilkinsburg SD school real estate tax reduction to 24.5 mills,
-    approved at the <time datetime="2021-06-29">June 29</time> board meeting.
-  </p></li>
-  
-  <li><p>
-    <time datetime="2022-06-15">June 15</time>: I fixed a bug caused the school-merger-only &quot;Increase versus present&quot; column to be shown instead of the Pittsburgh-only scenario when loading the page.
-        This was catchable because of the addition of the Pittsburgh-only total amount next to the calculate button, but still confusing and definitely a bug.
-      </p>
+  <li>
+    2022
+    <ul>
+      <li><p>
+        <time datetime="2022-06-30">June 30</time>: The calculator was updated to reflect the
+        2022-2023 Wilkinsburg SD school real estate tax reduction to 24.5 mills,
+        approved at the <time datetime="2021-06-29">June 29</time> board meeting.
+      </p></li>
+
+      <li><p>
+        <time datetime="2022-06-15">June 15</time>: I fixed a bug caused the school-merger-only &quot;Increase versus present&quot; column to be shown instead of the Pittsburgh-only scenario when loading the page.
+            This was catchable because of the addition of the Pittsburgh-only total amount next to the calculate button, but still confusing and definitely a bug.
+          </p>
+      </li>
+      <li><p>
+          <time datetime="2022-05-17">May 17</time>: The school-merger-only scenario is now hidden by default as it complicates the now mobile-friendly calculator.
+      </p></li>
+      <li><p>
+          <time datetime="2022-04-23">April 23</time>: The mean assessment and median household income have been adjusted to align with the most recent data for each: March 2022 and 2020 ACS, respectively. This new data actually demonstrates an <em>increase</em> in the gravity of the tax increase on a Wilkinsburg homeowner at the medians: a 36% increase in the increase, from approximately $30 to approximately $41. Also, the calculator now uses the placeholder values that are the medians for each if no data is entered. Also, the help text directs the user to their latest Wilkinsburg tax return for greatest accuracy, as federal IRS 1040 Adjusted Gross Income is different from what Wilkinsburg includes in earned income. Beware of tax calculators that make this mistake!</p>
+      </li>
+      <li><p>
+        <time datetime="2022-04-18">April 18</time>: The calculator got a light visual update. Notably, it shows
+        the delta right by the calculate button instead of relying on the user to find it in the table below.
+      </p></li>
+      <li><p>
+        <time datetime="2022-03-27">March 27</time>: The calculator clarifies earned income,
+        directs users to their W-2 for it, and adds the 107.2% magic number explanation and dog licensing section.
+      </p></li>
+    </ul>
   </li>
-  <li><p>
-      <time datetime="2022-05-17">May 17</time>: The school-merger-only scenario is now hidden by default as it complicates the now mobile-friendly calculator.
-  </p></li>
-  <li><p>
-      <time datetime="2022-04-23">April 23</time>: The mean assessment and median household income have been adjusted to align with the most recent data for each: March 2022 and 2020 ACS, respectively. This new data actually demonstrates an <em>increase</em> in the gravity of the tax increase on a Wilkinsburg homeowner at the medians: a 36% increase in the increase, from approximately $30 to approximately $41. Also, the calculator now uses the placeholder values that are the medians for each if no data is entered. Also, the help text directs the user to their latest Wilkinsburg tax return for greatest accuracy, as federal IRS 1040 Adjusted Gross Income is different from what Wilkinsburg includes in earned income. Beware of tax calculators that make this mistake!</p>
+  <li>
+    2021
+    <ul>
+      <li><p>
+        <time datetime="2021-12-27">December 27</time>: By popular request, the calculator now features a line for Allegheny County Real Estate Tax of 4.73 mills and the total
+        now includes that tax, as well.
+        Also, the rounding of the figures was tuned to cents instead of dollars as some users see a difference between the WCDC calculator and this
+        and think that one or the other is wrong when they're both right!
+        Also, the WilkinsburgMerger.org calculator has not yet been updated to reflect the PPS tax increase, so calculations will not match until they do so.
+      </p></li>
+      <li><p>
+        <time datetime="2021-12-23">December 23</time>: Pittsburgh Public Schools raised the school property tax to 10.25 mills from 9.95 mills, as reported by
+        <a href="https://www.post-gazette.com/news/education/2021/12/22/Pittsburgh-Public-Schools-board-tax-increase-vote-PPS-district-2022-budget/stories/202112210105">Post-Gazette</a>
+        and as <a href="https://go.boarddocs.com/pa/pghboe/Board.nsf/files/C9KMVU5CE971/$file/Real%20Property%20Tax%20Levies%20(2022)%20(10.25%20mills).pdf">written in the resolution</a>.
+        The calculator has been adjusted accordingly.
+      </p></li>
+      <li><p>
+        <time datetime="2021-12-13">December 13</time>: Wilkinsburg CDC launched
+        <a href="https://wilkinsburgmerger.org/calculator/">its own calculator</a>,
+        the <a
+               href="https://wilkinsburgmerger.org/wp-content/themes/burg2burgh/js/taxCalculator.js">math of which</a>
+        I've verified as accurate as of 2021-12-13 15:41 with
+        <abbr title="949c65525095634b4ae3cd23d7ff820c532d86b43e343cdb309a023028a92b7f">sha256:949c6552</abbr>.
+        Our displayed numbers disagree by a dollar or so, as I've chosen to round to the nearest
+        dollar for display purposes since I find that easier to do headmath when the cents don't matter much.
+        The WCDC calculator does show how much more or less the user will pay, but it does not easily afford a good/bad signal
+        as this calculator does.
+      </p></li>
+      <li><p>
+        <time datetime="2021-12-11">December 11</time>: I'm aware that the Pittsburgh SD may raise its taxes, according to
+        <a href="https://www.post-gazette.com/news/education/2021/12/09/Pittsburgh-Public-Schools-board-consider-property-tax-increase/stories/202112080166"
+           >Pittsburgh Public Schools board may consider property tax increase</a>, published in the Post-Gazette.
+        I will adjust the calculator upon any rate change that I hear about.
+      </p></li>
+      <li><p>
+        <time datetime="2021-11-19">November 19</time>: I removed the "Pittsburgh, Wilkinsburg SD (no school district merger)" scenario from the calculator and graphs
+        Per
+        <a href="https://codes.findlaw.com/pa/title-24-ps-education/pa-st-sect-24-2-229.html">PA Title 24 § 2-229</a>, which indicates that the school districts would merge
+        immediately upon annexation, this scenario is legally impossible so it's not worth considering anymore.
+        This estimated taxation if Pittsburgh annexed Wilkinsburg,
+        but the school districts <em>didn't not merge</em> or delay merging with no adjustment to school tax rates.
+      </li></p>
+      <li><p>
+        <time datetime="2021-11-18">November 18</time>: The calculator now includes the City of Pittsburgh
+        <a href="https://pittsburghpa.gov/finance/tax-faqs#36">library tax</a> of 0.25 mills in
+        real estate tax calculations. Wilkinsburg does not have a similar tax.
+      </p></li>
+
+      <li><p>
+        <time datetime="2021-11-07">November 7</time>: The calculator now includes the City of Pittsburgh
+        <a href="https://pittsburghpa.gov/finance/tax-descriptions#476">parks tax</a> of 0.5 mills in
+        real estate tax calculations. Wilkinsburg does not have a similar tax.
+      </p></li>
+
+      <li><p>
+        <time datetime="2021-07-13">July 13</time>: The calculator had a bug that double-counted
+        EIT in the "school merger only" scenario and failed to account for higher city EIT in the
+        "no school merger" scenario. The effect on the former is miniscule but the effect on the latter
+        is significant. Sorry for the error and thanks to Chris Peplin for providing
+        <a href="https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/pull/6">a fix</a> for
+        <a href="https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/issues/5">the problem</a>
+        I identified but didn't have time to fix on July 8.
+      </p></li>
+
+      <li><p>
+        <time datetime="2021-07-08">July 8</time>: The calculator was updated to reflect the
+        2021-2022 Wilkinsburg SD school real estate tax reduction to 26.5 mills,
+        approved at the <time datetime="2021-06-22">June 22</time> board meeting.
+        Calculations performed before July 8 do not include this and the present Wilkinsburg
+        scenario is now lower.
+      </p></li>
+    </ul>
   </li>
-  <li><p>
-    <time datetime="2022-04-18">April 18</time>: The calculator got a light visual update. Notably, it shows
-    the delta right by the calculate button instead of relying on the user to find it in the table below.
-  </p></li>
-  <li><p>
-    <time datetime="2022-03-27">March 27</time>: The calculator clarifies earned income,
-    directs users to their W-2 for it, and adds the 107.2% magic number explanation and dog licensing section.
-  </p></li>
-  <li><p>
-    <time datetime="2021-12-27">December 27</time>: By popular request, the calculator now features a line for Allegheny County Real Estate Tax of 4.73 mills and the total
-    now includes that tax, as well.
-    Also, the rounding of the figures was tuned to cents instead of dollars as some users see a difference between the WCDC calculator and this
-    and think that one or the other is wrong when they're both right!
-    Also, the WilkinsburgMerger.org calculator has not yet been updated to reflect the PPS tax increase, so calculations will not match until they do so.
-  </p></li>
-  <li><p>
-    <time datetime="2021-12-23">December 23</time>: Pittsburgh Public Schools raised the school property tax to 10.25 mills from 9.95 mills, as reported by
-    <a href="https://www.post-gazette.com/news/education/2021/12/22/Pittsburgh-Public-Schools-board-tax-increase-vote-PPS-district-2022-budget/stories/202112210105">Post-Gazette</a>
-    and as <a href="https://go.boarddocs.com/pa/pghboe/Board.nsf/files/C9KMVU5CE971/$file/Real%20Property%20Tax%20Levies%20(2022)%20(10.25%20mills).pdf">written in the resolution</a>.
-    The calculator has been adjusted accordingly.
-  </p></li>
-  <li><p>
-    <time datetime="2021-12-13">December 13</time>: Wilkinsburg CDC launched
-    <a href="https://wilkinsburgmerger.org/calculator/">its own calculator</a>,
-    the <a
-           href="https://wilkinsburgmerger.org/wp-content/themes/burg2burgh/js/taxCalculator.js">math of which</a>
-    I've verified as accurate as of 2021-12-13 15:41 with
-    <abbr title="949c65525095634b4ae3cd23d7ff820c532d86b43e343cdb309a023028a92b7f">sha256:949c6552</abbr>.
-    Our displayed numbers disagree by a dollar or so, as I've chosen to round to the nearest
-    dollar for display purposes since I find that easier to do headmath when the cents don't matter much.
-    The WCDC calculator does show how much more or less the user will pay, but it does not easily afford a good/bad signal
-    as this calculator does.
-  </p></li>
-  <li><p>
-    <time datetime="2021-12-11">December 11</time>: I'm aware that the Pittsburgh SD may raise its taxes, according to
-    <a href="https://www.post-gazette.com/news/education/2021/12/09/Pittsburgh-Public-Schools-board-consider-property-tax-increase/stories/202112080166"
-       >Pittsburgh Public Schools board may consider property tax increase</a>, published in the Post-Gazette.
-    I will adjust the calculator upon any rate change that I hear about.
-  </p></li>
-  <li><p>
-    <time datetime="2021-11-19">November 19</time>: I removed the "Pittsburgh, Wilkinsburg SD (no school district merger)" scenario from the calculator and graphs
-    Per
-    <a href="https://codes.findlaw.com/pa/title-24-ps-education/pa-st-sect-24-2-229.html">PA Title 24 § 2-229</a>, which indicates that the school districts would merge
-    immediately upon annexation, this scenario is legally impossible so it's not worth considering anymore.
-    This estimated taxation if Pittsburgh annexed Wilkinsburg,
-    but the school districts <em>didn't not merge</em> or delay merging with no adjustment to school tax rates.
-  </li></p>
-  <li><p>
-    <time datetime="2021-11-18">November 18</time>: The calculator now includes the City of Pittsburgh
-    <a href="https://pittsburghpa.gov/finance/tax-faqs#36">library tax</a> of 0.25 mills in
-    real estate tax calculations. Wilkinsburg does not have a similar tax.
-  </p></li>
-
-  <li><p>
-    <time datetime="2021-11-07">November 7</time>: The calculator now includes the City of Pittsburgh
-    <a href="https://pittsburghpa.gov/finance/tax-descriptions#476">parks tax</a> of 0.5 mills in
-    real estate tax calculations. Wilkinsburg does not have a similar tax.
-  </p></li>
-
-  <li><p>
-    <time datetime="2021-07-13">July 13</time>: The calculator had a bug that double-counted
-    EIT in the "school merger only" scenario and failed to account for higher city EIT in the
-    "no school merger" scenario. The effect on the former is miniscule but the effect on the latter
-    is significant. Sorry for the error and thanks to Chris Peplin for providing
-    <a href="https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/pull/6">a fix</a> for
-    <a href="https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/issues/5">the problem</a>
-    I identified but didn't have time to fix on July 8.
-  </p></li>
-
-  <li><p>
-    <time datetime="2021-07-08">July 8</time>: The calculator was updated to reflect the
-    2021-2022 Wilkinsburg SD school real estate tax reduction to 26.5 mills,
-    approved at the <time datetime="2021-06-22">June 22</time> board meeting.
-    Calculations performed before July 8 do not include this and the present Wilkinsburg
-    scenario is now lower.
-  </p></li>
 </ul>
 
 <h2>General Sources of Data</h2>
