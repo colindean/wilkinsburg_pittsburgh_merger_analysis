@@ -488,6 +488,12 @@ Some rights reserved. See LICENSE.md for details.
 
 <ul>
   <li><p>
+    <time datetime="2022-06-30">June 30</time>: The calculator was updated to reflect the
+    2022-2023 Wilkinsburg SD school real estate tax reduction to 24.5 mills,
+    approved at the <time datetime="2021-06-29">June 29</time> board meeting.
+  </p></li>
+  
+  <li><p>
       <time datetime="2022-06-15">June 15</time: I fixed a bug caused the school-merger-only &quot;Increase versus present&quot; column to be shown instead of the Pittsburgh-only scenario when loading the page.
         This was catchable because of the addition of the Pittsburgh-only total amount next to the calculate button, but still confusing and definitely a bug.
       </p>
@@ -600,7 +606,8 @@ Some rights reserved. See LICENSE.md for details.
     // https://alleghenycountytreasurer.us/real-estate-tax/local-and-school-district-tax-millage/
     function w_ret(property) { return property * (14.0/1000); }
     // https://github.com/colindean/wilkinsburg_pittsburgh_merger_analysis/pull/2#issuecomment-876449576
-    function w_sdt(property) { return property * (26.5/1000); }
+    // https://www.facebook.com/MayorComans/posts/pfbid0F6jjqgkeBu6hfYPRsaUEAKvkqZf5QV32zD96FjRzrvdQvqvtNXrqAdSabbC3K75pl
+    function w_sdt(property) { return property * (24.5/1000); }
 
     // https://pittsburghpa.gov/finance/tax-faqs#29
     function p_ret_realestate(property) { return property * (8.06/1000); }
