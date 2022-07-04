@@ -8,19 +8,20 @@ from typing import Callable
 def mils(amt: float) -> Callable[[float], float]:
     return lambda x: x * (amt / 1000.0)
 
+
 def percent(amt: float) -> Callable[[float], float]:
     return lambda x: x * (amt / 100.0)
 
 
 class TaxRates(ABC):
 
-    @abstractmethod
     @staticmethod
+    @abstractmethod
     def wage_tax(wages: float) -> float:
         pass
 
-    @abstractmethod
     @staticmethod
+    @abstractmethod
     def property_tax(assessment: float) -> float:
         pass
 
@@ -84,7 +85,7 @@ class PittsburghCity(TaxRates):
     def wage_tax(wages: float) -> float:
         return percent(1)(wages)
 
-   @staticmethod
+    @staticmethod
     def property_tax(assessment: float) -> float:
         parks = mils(0.5)
         library = mils(0.25)
