@@ -6,10 +6,10 @@ from typing import List, Optional
 
 import requests
 from bs4 import BeautifulSoup
+from colorlog import ColoredFormatter
 
 LOG_LEVEL = logging.DEBUG
 LOGFORMAT = "%(log_color)s%(levelname)-6s%(reset)s| %(log_color)s%(message)s%(reset)s"
-from colorlog import ColoredFormatter
 
 formatter = ColoredFormatter(LOGFORMAT)
 stream = logging.StreamHandler()
@@ -19,7 +19,7 @@ log = logging.getLogger(__name__)
 log.setLevel(LOG_LEVEL)
 log.addHandler(stream)
 
-years = range(2001, 2022)
+RETRIEVE_YEARS = range(2001, 2022)
 
 
 @dataclass
@@ -114,11 +114,11 @@ def get_year_data(year: int) -> YearData:
 
 
 def main():
-    for year in years:
+    for year in RETRIEVE_YEARS:
         data = get_year_data(year)
         log.info(data)
         # write_year_data(data)
-    log.info("Done collecting for %d years", len(years))
+    log.info("Done collecting for %d years", len(RETRIEVE_YEARS))
 
 
 if __name__ == "__main__":
