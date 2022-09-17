@@ -28,7 +28,8 @@ class MillageRate:
     rate: float = 0.0
 
     def __post_init__(self):
-        self.rate = self.mills / 1000.0
+        if self.rate == 0.0 and self.mills != 0.0:
+            self.rate = self.mills / 1000.0
 
     def __add__(self, other: 'MillageRate') -> 'MillageRate':
         assert type(other) == MillageRate
