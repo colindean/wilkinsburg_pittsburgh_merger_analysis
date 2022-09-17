@@ -19,32 +19,39 @@ log = logging.getLogger(__name__)
 log.setLevel(LOG_LEVEL)
 log.addHandler(stream)
 
-years = [2022]
+years = range(2001, 2022)
 
 
 @dataclass
 class MillageRate:
-    mills: float
+    mills: float = 0.0
+    rate: float = 0.0
+
+    def __post_init__(self):
+        self.rate = self.mills / 1000.0
 
     def __add__(self, other: 'MillageRate') -> 'MillageRate':
         assert type(other) == MillageRate
 
         return MillageRate(mills=math.fsum([self.mills, other.mills]))
 
+    def is_zero(self) -> bool:
+        return self.mills == 0.0
+
 
 @dataclass
 class PropertyTaxRate:
     name: str
-    millage: MillageRate = field(init=False)
-    land_tax: MillageRate = field(init=False)
+    millage: MillageRate = field(default_factory=MillageRate)
+    land_tax: MillageRate = field(default_factory=MillageRate)
     raw_millage: Optional[str] = None
     raw_land_tax: Optional[str] = None
 
     def __post_init__(self):
-        if self.raw_millage and not self.millage:
-            self.millage = self.parse_whole_mills(self.raw_millage)
-        if self.raw_land_tax and not self.land_tax:
-            self.land_tax = self.parse_whole_mills(self.raw_land_tax)
+        if self.raw_millage and self.millage.is_zero():
+            self.millage = self.parse_whole_mills(self.raw_millage if self.raw_millage != "N/A" else "0.0")
+        if self.raw_land_tax and not self.land_tax.is_zero():
+            self.land_tax = self.parse_whole_mills(self.raw_land_tax if self.raw_land_tax != "N/A" else "0.0")
 
     def total_re_tax_in_mills(self) -> MillageRate:
         """
@@ -56,7 +63,7 @@ class PropertyTaxRate:
 
     @staticmethod
     def parse_whole_mills(whole_mills: str) -> MillageRate:
-        return MillageRate(mills=float(whole_mills) / 1000.0)
+        return MillageRate(mills=float(whole_mills))
 
 
 @dataclass
@@ -65,13 +72,23 @@ class YearData:
     millages: List[PropertyTaxRate]
 
 
+def extract_millage_row(row) -> PropertyTaxRate:
+    # breakpoint()
+    if land := row.select('td[data-title="Land"]'):
+        land = land[0].text
+    else:
+        land = None
+
+    return PropertyTaxRate(
+        name=row.select('td[data-title="Muni"]')[0].text,
+        raw_millage=row.select('td[data-title="Millage"]')[0].text,
+        raw_land_tax=land
+    )
+
+
 def extract_millages(html: str) -> List[PropertyTaxRate]:
     soup = BeautifulSoup(html, "html5lib")
-    rates = list(map(lambda row: PropertyTaxRate(
-        name=row.select('td[data-title="Muni"]'),
-        raw_millage=row.select('td[data-title="Millage"]'),
-        raw_land_tax=row.select('td[data-title="Land"]')
-    ), soup.select('section#no_mo_tables table tr')))
+    rates = list(map(extract_millage_row, soup.select('section#no-mo-tables table tr')[2:]))
     log.info(f"Got {len(rates)} municipal rates")
     return rates
 
@@ -101,9 +118,8 @@ def main():
         data = get_year_data(year)
         log.info(data)
         # write_year_data(data)
+    log.info("Done collecting for %d years", len(years))
 
 
 if __name__ == "__main__":
     main()
-
-print('what')
