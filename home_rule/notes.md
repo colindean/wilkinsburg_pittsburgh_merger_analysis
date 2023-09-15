@@ -230,3 +230,18 @@ PoliceChief ==> |proposes/hires| Police[(Police Officers)]
 Council -.-o |approves \n hires| Police
 Council --x |can fire with \n supermajority vote| Police
 ```
+
+## Budgeting & Taxation
+
+The Council must publish a balanced budget proposal by October 1 annually.
+
+Any tax decrease of greater than 5% must be approved through a referendum.
+
+All tax increases must be ratified through a referendum, except when immediately following a decrease.
+For an increase of any income or property tax,
+a simple majority of voters is required for passage of increases of less than two percent,
+while a supermajority of voters is required for passage of increases of two percent or more.
+
+If the Council decreases a tax rate for one year and then raises the tax rate to up to the rate before the decrease, no referendum is required.
+Through this mechanism, the Council can respond to economic conditions by lowering taxes for one year and restoring them without public approval.
+Wilkinsburg taxpayers could assume that any tax adjustment is permanent after two years.
