@@ -236,6 +236,9 @@ Council --x |can fire with \n supermajority vote| Police
 The Council must publish a balanced budget proposal by October 1 annually.
 
 Any tax decrease of greater than 5% must be approved through a referendum.
+This is to encourage oversight and responsible budgeting.
+It may seem like a no-brainer for voters to approve, but the intent is to force voters to think about _why_ their taxes are decreasing
+and to prepare them for the possibility that taxes might increase within a few years of decreasing.
 
 All tax increases must be ratified through a referendum, except when immediately following a decrease.
 For an increase of any income or property tax,
