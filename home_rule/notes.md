@@ -248,3 +248,10 @@ while a supermajority of voters is required for passage of increases of two perc
 If the Council decreases a tax rate for one year and then raises the tax rate to up to the rate before the decrease, no referendum is required.
 Through this mechanism, the Council can respond to economic conditions by lowering taxes for one year and restoring them without public approval.
 Wilkinsburg taxpayers could assume that any tax adjustment is permanent after two years.
+
+## Unionization
+
+The borough council, mayor, and borough manager must not discourage unionization or union activity of borough government employees.
+The borough government charter must require that all union contracts are public.
+Any member of the public should have standing to force the government or the union employees to abide by the public contract.
+Any union contract to be approved must be published for review for at least 28 days before it can be voted on, but Council may require a longer review period.
