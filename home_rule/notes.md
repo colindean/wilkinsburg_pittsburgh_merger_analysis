@@ -255,3 +255,15 @@ The borough council, mayor, and borough manager must not discourage unionization
 The borough government charter must require that all union contracts are public.
 Any member of the public should have standing to force the government or the union employees to abide by the public contract.
 Any union contract to be approved must be published for review for at least 28 days before it can be voted on, but Council may require a longer review period.
+
+## Property Transfer & Abandonment
+
+[42 Pa. C.S. § 5527.1](https://casetext.com/statute/pennsylvania-statutes/consolidated-statutes/title-42-pacs-judiciary-and-judicial-procedure/part-vi-actions-proceedings-and-other-matters-generally/chapter-55-limitation-of-time/subchapter-b-civil-actions-and-proceedings/section-55271-ten-year-limitation)
+provides a ten-year period of adverse possession and a one-year period in which disputes to such possession may be resolved.
+If possible under Home Rule, Wilkinsburg should consider an expedited adverse possession period that enables blighted residences
+to be occupied, improved, and retitled with some protection for the occupiers.
+So much of Wilkinsburg's blighted property and vacant property is owned by deceased people, according to some members of the community.
+A careful system that enables rightful owners to regain possession of their property with compensation due to the occupying improvers could alleviate the problem of continued disuse of Wilkinsburg's housing stock and the return of property to the tax rolls.
+This offsets costs and incredibly long waiting periods for other processes.
+A possession period as short as three years may work, but it should be less than seven years.
+Ten years under current law is too long for someone to risk dramatically improving a blighted property only to lose it when an absent heir appears.
