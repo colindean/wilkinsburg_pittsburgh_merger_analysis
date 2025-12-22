@@ -1,6 +1,32 @@
 # Wilkinsburg and Pittsburgh Annexation/Merger Analysis
 
-Quick links:
+> [!IMPORTANT]
+> This tool is no longer maintained as of the end of 2023, because the annexation effort ended in April 2024.
+> Its tax rates were last updated for 2023 and are outdated by the 2024 tax year.
+
+> [!NOTE]
+> The PA Supreme Court ended the annexation effort [in April 2024][denied] by denying the appeal of the pro-annexation side,
+> upholding the lower court decision that the 1903 annexation law was repealed in the new 1968 PA constitution.
+> Under PA law as of 2025, there is no way for a municipality of the second class[^class] (i.e., Pittsburgh)
+> to merge with or annex a municipality of a lower class.
+> Speculation in court offered that the referendum vote of _both_ municipalities possible for smaller municipalities
+> may apply if the PA legislature were to pass it, but such is unlikely to garner public support in the near future.
+> 
+> In November 2024, Wilkinsburg voted to adopt a Home Rule charter.
+> The [new governance](https://www.wilkinsburgpa.gov/wp-content/uploads/2024/08/WGSCFinalReport.pdf)
+> features an empowered, voiced mayor, term limits for councilmembers, budget requirements,
+> modernized compensation for elected officials, and,
+> most important of all, rulemaking and legislation as independent of the PA legislature as can be under PA law.
+> The [transition team](https://www.wilkinsburgpa.gov/projects-and-initiatives/home-rule-transition/)
+> began its work in February 2025.
+> The charter is not free of potential problems, but it is a massive step toward the maturity and independence befitting Wilkinsburg.
+
+[denied]: https://www.casemine.com/judgement/us/6621f3df15f484623c288dcd
+[^class]: Class is determined by population count primarily,
+          although PA law specifically designates
+          Philadelphia as first class and Pittsburgh as second class.
+
+## Quick links
 
 * [Tax Graph](wilkinsburg_pittsburgh_merger_taxes.svg)
 * [Tax Calculator](calculator.html)
