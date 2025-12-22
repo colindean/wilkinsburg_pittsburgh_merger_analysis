@@ -26,6 +26,24 @@
           although PA law specifically designates
           Philadelphia as first class and Pittsburgh as second class.
 
+## Epigraph
+
+I must thank [Chris Peplin](https://github.com/peplin) for finding a problem with the calculator early on.
+I must thank councilmember Linda Atkins for asking me to do something to help explain the tax impacts of annexation.
+I must thank the folks behind [Wilkinsburg Future](https://www.wilkinsburgfuture.org) for including me and this project early on.
+
+In the end, many people thanked me for creating this calculator and graph.
+Several people commented to me throughout the process that this tooling changed their opinion on annexation,
+as it showed the real financial impact of it;
+just one (significant) aspect of such a major change that could help some Wilkinsburgers at the expense of others.
+
+It is vital that technologists, including software developers, actively engage in local politics.
+Technology is inherently political.
+We can use our skills to bring change that enhances liberty.
+Judge Damon Keith wrote, "Democracies die behind closed doors,"
+which the Washington Post paraphrased to "Democracy dies in darkness," its tagline announced in 2017.
+Through small acts of coding, we have the power to shed light on the truth.
+
 ## Quick links
 
 * [Tax Graph](wilkinsburg_pittsburgh_merger_taxes.svg)
